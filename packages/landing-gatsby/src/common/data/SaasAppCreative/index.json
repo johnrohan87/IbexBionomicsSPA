@@ -1,0 +1,289 @@
+{
+  "menu_items": [
+    {
+      "label": "Home",
+      "path": "#home",
+      "offset": "70"
+    },
+    {
+      "label": "How to",
+      "path": "#how-to",
+      "offset": "70"
+    },
+    {
+      "label": "Features",
+      "path": "#features",
+      "offset": "70"
+    },
+    {
+      "label": "Portfolio",
+      "path": "#portfolio",
+      "offset": "70"
+    },
+    {
+      "label": "News",
+      "path": "#newsfeed",
+      "offset": "70"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "logo": "../../assets/image/saasAppCreative/logos/envato.png",
+      "name": "envato"
+    },
+    {
+      "id": 2,
+      "logo": "../../assets/image/saasAppCreative/logos/evernote.png",
+      "name": "evernote"
+    },
+    {
+      "id": 3,
+      "logo": "../../assets/image/saasAppCreative/logos/forbes.png",
+      "name": "forbes"
+    },
+    {
+      "id": 4,
+      "logo": "../../assets/image/saasAppCreative/logos/geekwire.png",
+      "name": "geekwire"
+    },
+    {
+      "id": 5,
+      "logo": "../../assets/image/saasAppCreative/logos/slack.png",
+      "name": "slack"
+    },
+    {
+      "id": 6,
+      "logo": "../../assets/image/saasAppCreative/logos/usa-today.png",
+      "name": "usa-today"
+    }
+  ],
+  "howTos": [
+    {
+      "id": 1,
+      "icon": "../../assets/image/saasAppCreative/icons/1.png",
+      "title": "Manage Smartly",
+      "text": "Stay on top of your task lists and stay in touch with what's happening",
+      "linkLabel": "Learn More",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "icon": "../../assets/image/saasAppCreative/icons/2.png",
+      "title": "Monitor user Analytics",
+      "text": "Stay on top of your task lists and stay in touch with what's happening",
+      "linkLabel": "Learn More",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "icon": "../../assets/image/saasAppCreative/icons/3.png",
+      "title": "Safe & Trusted",
+      "text": "Get the best DoorDash experience with live order tracking.",
+      "linkLabel": "Learn More",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "icon": "../../assets/image/saasAppCreative/icons/4.png",
+      "title": "Fast Customer Support",
+      "text": "Get the best DoorDash experience with live order tracking.",
+      "linkLabel": "Learn More",
+      "link": "#"
+    }
+  ],
+  "portfolios": [
+    {
+      "id": 1,
+      "bgColor": "#E8FFD6",
+      "title": "Dashboard Development",
+      "description": "Create professional ads, branded content, and stunning stories in minutes. Now available on desktop and mobile.",
+      "media": "../../assets/image/saasAppCreative/portfolio1.png"
+    },
+    {
+      "id": 2,
+      "bgColor": "#F0F9FE",
+      "title": "Database Control system",
+      "description": "Create professional ads, branded content, and stunning stories in minutes. Now available on desktop and mobile.",
+      "media": "../../assets/image/saasAppCreative/portfolio2.png"
+    }
+  ],
+  "features": [
+    {
+      "id": 1,
+      "icon": "../../assets/image/saasAppCreative/icons/feature1.png",
+      "title": "3D modeling & art",
+      "text": "Get your info tests delivered at home collect a sample from the your progress tests."
+    },
+    {
+      "id": 2,
+      "icon": "../../assets/image/saasAppCreative/icons/feature2.png",
+      "title": "Digital promotion",
+      "text": "Get your info tests delivered at home collect a sample from the your progress tests."
+    },
+    {
+      "id": 3,
+      "icon": "../../assets/image/saasAppCreative/icons/feature3.png",
+      "title": "Business Enterprise",
+      "text": "Get your info tests delivered at home collect a sample from the your progress tests."
+    },
+    {
+      "id": 4,
+      "icon": "../../assets/image/saasAppCreative/icons/feature4.png",
+      "title": "Marketing & advertising",
+      "text": "Get your info tests delivered at home collect a sample from the your progress tests."
+    },
+    {
+      "id": 5,
+      "icon": "../../assets/image/saasAppCreative/icons/feature5.png",
+      "title": "Ultimate development",
+      "text": "Get your info tests delivered at home collect a sample from the your progress tests."
+    },
+    {
+      "id": 6,
+      "icon": "../../assets/image/saasAppCreative/icons/feature6.png",
+      "title": "Online support",
+      "text": "Get your info tests delivered at home collect a sample from the your progress tests."
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "date": "June 3, 2020",
+      "image": "../../assets/image/saasAppCreative/blog1.png",
+      "title": "The three Fundamental Rules to Keep Your Website Goal Orientated",
+      "excerpt": {
+        "label": "Learn More",
+        "link": "#"
+      }
+    },
+    {
+      "id": 2,
+      "date": "Dec 8, 2020",
+      "image": "../../assets/image/saasAppCreative/blog2.png",
+      "title": "Five Common Mistakes Teams Make When Tracking Performance",
+      "excerpt": {
+        "label": "Learn More",
+        "link": "#"
+      }
+    },
+    {
+      "id": 3,
+      "date": "Dec 8, 2020",
+      "image": "../../assets/image/saasAppCreative/blog3.png",
+      "title": "Why You Might Want to Reconsider with Tracking First Meaningful Paint",
+      "excerpt": {
+        "label": "Learn More",
+        "link": "#"
+      }
+    }
+  ],
+  "footer": {
+    "about": {
+      "logo": "../../assets/image/saasAppCreative/logo.svg",
+      "text": "We run Advanced Search reports on the criteria you care about to see how work is progressing and where to focus."
+    },
+    "widgets": [
+      {
+        "id": 2,
+        "title": "About Us",
+        "list": [
+          {
+            "id": 1,
+            "title": "Support Center",
+            "link": "#"
+          },
+          {
+            "id": 2,
+            "title": "Customer Support",
+            "link": "#"
+          },
+          {
+            "id": 3,
+            "title": "About Us",
+            "link": "#"
+          },
+          {
+            "id": 4,
+            "title": "Copyright",
+            "link": "#"
+          },
+          {
+            "id": 5,
+            "title": "Popular Campaign",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Our Information",
+        "list": [
+          {
+            "id": 1,
+            "title": "Return Policy ",
+            "link": "#"
+          },
+          {
+            "id": 2,
+            "title": "Privacy Policy",
+            "link": "#"
+          },
+          {
+            "id": 3,
+            "title": "Terms & Conditions",
+            "link": "#"
+          },
+          {
+            "id": 4,
+            "title": "Site Map",
+            "link": "#"
+          },
+          {
+            "id": 5,
+            "title": "Store Hours",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "My Account",
+        "list": [
+          {
+            "id": 1,
+            "title": "Press inquiries",
+            "link": "#"
+          },
+          {
+            "id": 2,
+            "title": "Social media ",
+            "link": "#"
+          },
+          {
+            "id": 3,
+            "title": "directories",
+            "link": "#"
+          },
+          {
+            "id": 4,
+            "title": "Images & B-roll",
+            "link": "#"
+          },
+          {
+            "id": 5,
+            "title": "Permissions",
+            "link": "#"
+          }
+        ]
+      }
+    ],
+    "contactInfo": {
+      "title": "Contact info",
+      "address": "Mohakhali DOHS, Amsterdam, Netherlands",
+      "phone": "+31 62 19 22 705",
+      "openingTime": "7 Days - 8am - 10pm",
+      "email": "info@redqteam.com"
+    }
+  }
+}

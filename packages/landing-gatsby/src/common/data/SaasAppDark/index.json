@@ -1,0 +1,327 @@
+{
+  "MENU_ITEMS": [
+    {
+      "label": "Home",
+      "path": "#home",
+      "offset": "70",
+      "id": 1
+    },
+    {
+      "label": "How to",
+      "path": "#how-to",
+      "offset": "70",
+      "id": 2
+    },
+    {
+      "label": "Testimonials",
+      "path": "#testimonials",
+      "offset": "70",
+      "id": 3
+    },
+    {
+      "label": "Newsfeed",
+      "path": "#newsfeed",
+      "offset": "70",
+      "id": 4
+    },
+    {
+      "label": "Download App",
+      "path": "#download_app",
+      "offset": "70",
+      "id": 5
+    }
+  ],
+  "CLIENTS": [
+    {
+      "id": 1,
+      "src": "../../assets/image/saasAppDark/clients/envato.png"
+    },
+    {
+      "id": 2,
+      "src": "../../assets/image/saasAppDark/clients/evernote.png"
+    },
+    {
+      "id": 3,
+      "src": "../../assets/image/saasAppDark/clients/forbes.png"
+    },
+    {
+      "id": 4,
+      "src": "../../assets/image/saasAppDark/clients/geekwire.png"
+    },
+    {
+      "id": 5,
+      "src": "../../assets/image/saasAppDark/clients/slack.png"
+    },
+    {
+      "id": 6,
+      "src": "../../assets/image/saasAppDark/clients/usa-today.png"
+    }
+  ],
+  "SERVICES": [
+    {
+      "id": 1,
+      "title": "Fast Performance",
+      "icon": "../../assets/image/saasAppDark/icons/service1.svg"
+    },
+    {
+      "id": 2,
+      "title": "User Customization",
+      "icon": "../../assets/image/saasAppDark/icons/service2.svg"
+    },
+    {
+      "id": 3,
+      "title": "Modify structure",
+      "icon": "../../assets/image/saasAppDark/icons/service3.svg"
+    },
+    {
+      "id": 4,
+      "title": "Customer Analysis",
+      "icon": "../../assets/image/saasAppDark/icons/service4.svg"
+    },
+    {
+      "id": 5,
+      "title": "Instant Support",
+      "icon": "../../assets/image/saasAppDark/icons/service5.svg"
+    }
+  ],
+  "MONITORING_FEATURES": [
+    {
+      "id": 1,
+      "icon": "../../assets/image/saasAppDark/icons/rocket.svg",
+      "title": "Daily Graph analysis",
+      "desc": "Stay on top of your task lists and stay in touch with what's happening by the latest UI updates"
+    },
+    {
+      "id": 2,
+      "icon": "../../assets/image/saasAppDark/icons/headphone.svg",
+      "title": "Communication Speedy",
+      "desc": "Stay on top of your task lists and stay in touch with what's happening and what’s out."
+    }
+  ],
+  "STATUS_COUNTER": {
+    "blockTitle": {
+      "subtitle": "Monthly Stats",
+      "title": "Take your user monitoring experience to new ultimate level with file tracking",
+      "text": "Pick one of our stock themes, or create your custom theme with the most advanced theme editor on any online survey building tool. It is built to perform and run fast on all of the latest mobile devices. Build out-of the box blazing fast apps with a small footprint and built-in best practices.",
+      "button": {
+        "link": "#",
+        "label": "Discover more"
+      }
+    },
+    "posts": [
+      {
+        "count": "80",
+        "title": "Up to",
+        "text": "Customer Response",
+        "symbol": "%"
+      },
+      {
+        "count": "99",
+        "title": "Consistent",
+        "text": "Performance Score",
+        "symbol": "%"
+      },
+      {
+        "count": "3.5",
+        "title": "Down to",
+        "text": "Response Time",
+        "symbol": "S"
+      },
+      {
+        "count": "5x",
+        "title": "Up to",
+        "text": "Faster then others",
+        "symbol": ""
+      }
+    ]
+  },
+  "VIDEO_INTRO": {
+    "features": [
+      {
+        "id": 1,
+        "title": "1-month Free Trial",
+        "desc": "We are open for trial sessions"
+      },
+      {
+        "id": 2,
+        "title": "Sales Widgets",
+        "desc": "Stay on top of your task lists"
+      },
+      {
+        "id": 3,
+        "title": "Free security update",
+        "desc": "Every month we provide updates"
+      }
+    ]
+  },
+  "TESTIMONIALS": [
+    {
+      "id": 1,
+      "logo": "../../assets/image/saasAppDark/tm-logo1.svg",
+      "author": "Johnny Simpson",
+      "designation": "Head of Design",
+      "quote": "Each room is loaded with the most collaborative surfaces so you can quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with the editors."
+    },
+    {
+      "id": 2,
+      "logo": "../../assets/image/saasAppDark/tm-logo2.svg",
+      "author": "Deanna Hodges",
+      "designation": "Business HR Admin",
+      "quote": "We deliver on such an expansive with innovation agenda with so many theme projects going on at any time, it can be hard to maintain momentum. So We appreciate to work with them."
+    },
+    {
+      "id": 3,
+      "logo": "../../assets/image/saasAppDark/tm-logo3.svg",
+      "author": "Gracelyn Mason",
+      "designation": "Senior Marketer",
+      "quote": "Flat item is loaded with the most of collaborative surfaces so you can do quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with statics."
+    },
+    {
+      "id": 4,
+      "logo": "../../assets/image/saasAppDark/tm-logo1.svg",
+      "author": "Gracelyn Mason",
+      "designation": "Senior Marketer",
+      "quote": "Flat item is loaded with the most of collaborative surfaces so you can do quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with statics."
+    }
+  ],
+  "POSTS": [
+    {
+      "id": 1,
+      "date": "June 3, 2020",
+      "image": "../../assets/image/saasAppDark/post1.png",
+      "title": "The three Fundamental Rules to Keep Your Website Goal Orientated",
+      "excerpt": {
+        "label": "Learn More",
+        "link": "#"
+      }
+    },
+    {
+      "id": 2,
+      "date": "Dec 8, 2020",
+      "image": "../../assets/image/saasAppDark/post2.png",
+      "title": "Five Common Mistakes Teams Make When Tracking Performance",
+      "excerpt": {
+        "label": "Learn More",
+        "link": "#"
+      }
+    },
+    {
+      "id": 3,
+      "date": "Dec 8, 2020",
+      "image": "../../assets/image/saasAppDark/post3.png",
+      "title": "Why You Might Want to Reconsider with Tracking First Meaningful Paint",
+      "excerpt": {
+        "label": "Learn More",
+        "link": "#"
+      }
+    }
+  ],
+  "FOOTER_WIDGET": {
+    "about": {
+      "logo": "../../assets/image/saasAppDark/logo.svg",
+      "text": "We run Advanced Search reports on the criteria you care about to see how work is progressing and where to focus your effort."
+    },
+    "widgets": [
+      {
+        "id": 2,
+        "title": "About Us",
+        "list": [
+          {
+            "id": 1,
+            "title": "Support Center",
+            "link": "#"
+          },
+          {
+            "id": 2,
+            "title": "Customer Support",
+            "link": "#"
+          },
+          {
+            "id": 3,
+            "title": "About Us",
+            "link": "#"
+          },
+          {
+            "id": 4,
+            "title": "Copyright",
+            "link": "#"
+          },
+          {
+            "id": 5,
+            "title": "Popular Campaign",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Our Information",
+        "list": [
+          {
+            "id": 1,
+            "title": "Return Policy ",
+            "link": "#"
+          },
+          {
+            "id": 2,
+            "title": "Privacy Policy",
+            "link": "#"
+          },
+          {
+            "id": 3,
+            "title": "Terms & Conditions",
+            "link": "#"
+          },
+          {
+            "id": 4,
+            "title": "Site Map",
+            "link": "#"
+          },
+          {
+            "id": 5,
+            "title": "Store Hours",
+            "link": "#"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "My Account",
+        "list": [
+          {
+            "id": 1,
+            "title": "Press inquiries",
+            "link": "#"
+          },
+          {
+            "id": 2,
+            "title": "Social media ",
+            "link": "#"
+          },
+          {
+            "id": 3,
+            "title": "directories",
+            "link": "#"
+          },
+          {
+            "id": 4,
+            "title": "Images & B-roll",
+            "link": "#"
+          },
+          {
+            "id": 5,
+            "title": "Permissions",
+            "link": "#"
+          }
+        ]
+      }
+    ],
+    "contactInfo": {
+      "title": "Contact info",
+      "address": "Amsterdam, Netherlands",
+      "phone": "+31 62 19 22 705",
+      "openingTime": "7 Days - 8am - 10pm",
+      "email": "info@redqteam.com"
+    }
+  }
+}

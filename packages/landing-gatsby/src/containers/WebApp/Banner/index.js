@@ -1,0 +1,58 @@
+import Box from 'common/components/Box';
+import Heading from 'common/components/Heading';
+import Image from 'common/components/Image';
+import Text from 'common/components/Text';
+import Container from 'common/components/UI/Container';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import React from 'react';
+import { Icon } from 'react-icons-kit';
+import { androidArrowForward } from 'react-icons-kit/ionicons/androidArrowForward';
+import BannerArea, { Col } from './banner.style';
+
+const Banner = () => {
+  const Data = useStaticQuery(graphql`
+    query {
+      webAppJson {
+        BANNER_DATA {
+          title
+          text
+          button {
+            link
+            label
+          }
+          image {
+            src {
+              publicURL
+            }
+          }
+          tagline
+        }
+      }
+    }
+  `);
+  const { title, text, button, image, tagline } = Data.webAppJson.BANNER_DATA;
+  return (
+    <BannerArea id="banner_section">
+      <Container className="Container">
+        <Col>
+          <Heading as="h2" content={title} />
+          <Text as="p" content={text} />
+          <Box className="ButtonWrap">
+            <Link className="Button" to={button.link}>
+              {button.label}
+              <Icon size={18} icon={androidArrowForward} />
+            </Link>
+            <Text as="span" content={tagline} />
+          </Box>
+        </Col>
+      </Container>
+      <Box className="bannerImage">
+        {image.map(({ src }, index) => (
+          <Image src={src.publicURL} alt="" key={`banner-image-key-${index}`} />
+        ))}
+      </Box>
+    </BannerArea>
+  );
+};
+
+export default Banner;

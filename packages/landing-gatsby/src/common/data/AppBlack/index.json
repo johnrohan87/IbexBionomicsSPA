@@ -1,0 +1,527 @@
+{
+  "MENU_ITEMS": [
+    {
+      "label": "Home",
+      "path": "#banner_section",
+      "offset": "70"
+    },
+    {
+      "label": "Product",
+      "path": "#restaurants",
+      "offset": "70"
+    },
+    {
+      "label": "Pricing",
+      "path": "#features",
+      "offset": "70"
+    },
+    {
+      "label": "About",
+      "path": "#testimonials",
+      "offset": "70"
+    }
+  ],
+
+  "SCROLLABLE_STICKY_DATA": {
+    "mockupImage": "../../assets/image/appBlack/sticky-mockup.png"
+  },
+
+  "BANNER_DATA": {
+    "sectionImage": "../../assets/image/appBlack/banner-1.png",
+    "screenImage": "../../assets/image/appBlack/banner-screen.png",
+    "title": "Your favorite apps that make day easy",
+    "text": "There will be a day–in our lifetime–when we get to celebrate every person on the planet having access. Moment Pro is the best software platform to collect reviews.",
+    "tagLine": "Apps Available to download on",
+    "buttons": [
+      {
+        "icon": "../../assets/image/appBlack/banner-apple.svg",
+        "title": "App Store",
+        "text": "Download on the",
+        "link": "#"
+      },
+      {
+        "icon": "../../assets/image/appBlack/banner-google-play.svg",
+        "title": "Google Play",
+        "text": "Download on the",
+        "link": "#"
+      }
+    ]
+  },
+
+  "SERVICE_DATA": {
+    "sectionImage": "../../assets/image/appBlack/service-img.png",
+    "screenImage": "../../assets/image/appBlack/service-screen.png",
+    "title": "We deliver our products as fast as superman can do",
+    "text": "Pick one of our stock themes, or create your custom theme with the most advanced theme editor on any online survey building tool.",
+
+    "serviceItems": [
+      {
+        "icon": "../../assets/image/appBlack/service-rocket-icon.png",
+        "title": "Fast Performance"
+      },
+      {
+        "icon": "../../assets/image/appBlack/service-customize-icon.png",
+        "title": "Customization"
+      },
+      {
+        "icon": "../../assets/image/appBlack/service-develop-icon.png",
+        "title": "Ultimate Develop"
+      },
+      {
+        "icon": "../../assets/image/appBlack/service-develop-icon.png",
+        "title": "Modify structure"
+      },
+      {
+        "icon": "../../assets/image/appBlack/service-analysis-icon.png",
+        "title": "Customer Analysis"
+      },
+      {
+        "icon": "../../assets/image/appBlack/service-headphone-icon.png",
+        "title": "User Supports"
+      }
+    ]
+  },
+
+  "DELIVERY_PRODUCT_DATA": {
+    "screenImage": "../../assets/image/appBlack/product-screen.png",
+    "sectionContent": {
+      "title": "Most promising secure app with fast &  Entertaining",
+      "text": "Pick one of our stock themes, or create your custom theme with the most advanced theme editor on any online survey building tool.",
+      "image": "../../assets/image/appBlack/delivery-img.png"
+    },
+    "posts": [
+      {
+        "title": "Easy to use application",
+        "text": "We’re driven beyond just finishing the projects. We want to find solutions using our website & apps."
+      },
+      {
+        "title": "Deliver Food within 30 min",
+        "text": "We’re driven beyond just finishing the projects. We want to find solutions using our website & apps."
+      },
+      {
+        "title": "100% Reliable with Privacy",
+        "text": "We’re driven beyond just finishing the projects. We want to find solutions using our website & apps."
+      }
+    ]
+  },
+
+  "QUALITY_FEATURES_DATA": {
+    "title": "Meet our Quality Features",
+    "posts": [
+      {
+        "icon": "../../assets/image/appBlack/feature-icon-1.png",
+        "title": "Analytics Business",
+        "text": "We’re driven beyond just finishing the projects. We want to find smart solutions."
+      },
+      {
+        "icon": "../../assets/image/appBlack/feature-icon-2.png",
+        "title": "Artificial Intelligence",
+        "text": "We’re driven beyond just finishing the projects. We want to find smart solutions."
+      },
+      {
+        "icon": "../../assets/image/appBlack/feature-icon-3.png",
+        "title": "Privacy & Security",
+        "text": "We’re driven beyond just finishing the projects. We want to find smart solutions."
+      },
+      {
+        "icon": "../../assets/image/appBlack/feature-icon-3.png",
+        "title": "Annual Reports",
+        "text": "We’re driven beyond just finishing the projects. We want to find smart solutions."
+      },
+      {
+        "icon": "../../assets/image/appBlack/feature-icon-5.png",
+        "title": "Video Tutorial",
+        "text": "We’re driven beyond just finishing the projects. We want to find smart solutions."
+      },
+      {
+        "icon": "../../assets/image/appBlack/feature-icon-6.png",
+        "title": "Performance Analysis",
+        "text": "We’re driven beyond just finishing the projects. We want to find smart solutions."
+      }
+    ]
+  },
+
+  "CLIENTS_DATA": {
+    "title": "210,000+ people already use our app on a daily basis",
+    "clients": [
+      {
+        "id": "1",
+        "name": "geekwire",
+        "link": "#1",
+        "logo": "../../assets/image/appBlack/client-1.png"
+      },
+      {
+        "id": "2",
+        "name": "slack",
+        "link": "#2",
+        "logo": "../../assets/image/appBlack/client-2.png"
+      },
+      {
+        "id": "3",
+        "name": "envato",
+        "link": "#3",
+        "logo": "../../assets/image/appBlack/client-3.png"
+      },
+      {
+        "id": "4",
+        "name": "usa today",
+        "link": "#4",
+        "logo": "../../assets/image/appBlack/client-4.png"
+      },
+      {
+        "id": "5",
+        "name": "forbes",
+        "link": "#5",
+        "logo": "../../assets/image/appBlack/client-5.png"
+      },
+      {
+        "id": "6",
+        "name": "evernote",
+        "link": "#6",
+        "logo": "../../assets/image/appBlack/client-6.png"
+      }
+    ]
+  },
+
+  "TESTIMONIALS": [
+    {
+      "review": "Whenever I need to create a new cool ecommerce site for clients, @redqteam is my solution is the best agency. We are super excited about it. Whenever I need to create a new cool ecommerce site for clients, @redqteam is my solution is the best agency. We are super excited about it.",
+      "name": "Denny Hilguston",
+      "designation": "CEO of Dell Co.",
+      "avatar": "../../assets/image/appBlack/testimonials-1-1.png"
+    },
+    {
+      "review": "Whenever I need to create a new cool ecommerce site for clients, @redqteam is my solution is the best agency. We are super excited about it. Whenever I need to create a new cool ecommerce site for clients, @redqteam is my solution is the best agency. We are super excited about it.",
+      "name": "Jon Doe",
+      "designation": "Co Founder of IBM",
+      "avatar": "../../assets/image/appBlack/testimonials-1-2.png"
+    },
+    {
+      "review": "Whenever I need to create a new cool ecommerce site for clients, @redqteam is my solution is the best agency. We are super excited about it. Whenever I need to create a new cool ecommerce site for clients, @redqteam is my solution is the best agency. We are super excited about it.",
+      "name": "Denny Hilguston",
+      "designation": "CEO of Dell Co.",
+      "avatar": "../../assets/image/appBlack/testimonials-1-1.png"
+    },
+    {
+      "review": "Whenever I need to create a new cool ecommerce site for clients, @redqteam is my solution is the best agency. We are super excited about it. Whenever I need to create a new cool ecommerce site for clients, @redqteam is my solution is the best agency. We are super excited about it.",
+      "name": "Jon Doe",
+      "designation": "Co Founder of IBM",
+      "avatar": "../../assets/image/appBlack/testimonials-1-2.png"
+    },
+    {
+      "review": "Whenever I need to create a new cool ecommerce site for clients, @redqteam is my solution is the best agency. We are super excited about it. Whenever I need to create a new cool ecommerce site for clients, @redqteam is my solution is the best agency. We are super excited about it.",
+      "name": "Denny Hilguston",
+      "designation": "CEO of Dell Co.",
+      "avatar": "../../assets/image/appBlack/testimonials-1-1.png"
+    }
+  ],
+
+  "pricing": {
+    "linkIcon": "../../assets/image/appBlack/plan-link-icon.png",
+    "title": "Choose your pricing policy",
+    "monthly": [
+      {
+        "id": 1,
+        "title": "Starter Pack",
+        "description": "Complete time tracking & proper reporting",
+        "suggested": false,
+        "price": "16",
+        "iconBlack": "../../assets/image/appBlack/plan-icecream-black-icon.svg",
+        "iconWhite": "../../assets/image/appBlack/plan-icecream-white-icon.svg"
+      },
+      {
+        "id": 2,
+        "title": "Premium Pack",
+        "description": "Effortless team with time management.",
+        "suggested": true,
+        "price": "29",
+        "iconBlack": "../../assets/image/appBlack/plan-donut-black-icon.svg",
+        "iconWhite": "../../assets/image/appBlack/plan-donut-white-icon.png"
+      },
+      {
+        "id": 3,
+        "title": "Ultimate Pack",
+        "description": "A custom plan for complex or large organization.",
+        "suggested": true,
+        "price": "35",
+        "iconBlack": "../../assets/image/appBlack/plan-pizza-black-icon.svg",
+        "iconWhite": "../../assets/image/appBlack/plan-pizza-white-icon.svg"
+      }
+    ],
+    "annualy": [
+      {
+        "id": 1,
+        "title": "Starter Pack",
+        "description": "Complete time tracking & proper reporting",
+        "suggested": false,
+        "price": "160",
+        "iconBlack": "../../assets/image/appBlack/plan-icecream-black-icon.svg",
+        "iconWhite": "../../assets/image/appBlack/plan-icecream-white-icon.svg"
+      },
+      {
+        "id": 2,
+        "title": "Premium Pack",
+        "description": "Effortless team with time management.",
+        "suggested": true,
+        "price": "290",
+        "iconBlack": "../../assets/image/appBlack/plan-donut-black-icon.svg",
+        "iconWhite": "../../assets/image/appBlack/plan-donut-white-icon.png"
+      },
+      {
+        "id": 3,
+        "title": "Ultimate Pack",
+        "description": "A custom plan for complex or large organization.",
+        "suggested": true,
+        "price": "350",
+        "iconBlack": "../../assets/image/appBlack/plan-pizza-black-icon.svg",
+        "iconWhite": "../../assets/image/appBlack/plan-pizza-white-icon.svg"
+      }
+    ]
+  },
+
+  "faq": {
+    "slogan": "FREQUENT QUESTION",
+    "title": "Do you have any question?",
+    "faqs": [
+      {
+        "id": 11,
+        "question": "How to contact with riders emergency?",
+        "answer": "Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home. Your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news."
+      },
+      {
+        "id": 12,
+        "question": "App installation failed, how to update system information?",
+        "answer": "Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home. Your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news."
+      },
+      {
+        "id": 13,
+        "question": "Website reponse taking time, how to improve?",
+        "answer": "Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home. Your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news."
+      },
+      {
+        "id": 14,
+        "question": "New update fixed all bug and issues",
+        "answer": "Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home. Your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news."
+      }
+    ]
+  },
+
+  "CALL_TO_ACTION_DATA": {
+    "title": "Your order knocking on \nthe door. Please receive",
+    "text": "Pick one of our stock themes, or create your custom theme \nwith the most advanced theme editor on any online.",
+    "image": "../../assets/image/foodDelivery/call-to-action-1.png",
+    "link": {
+      "label": "Order More",
+      "path": "#"
+    }
+  },
+  "GALLERY_DATA": {
+    "images": [
+      {
+        "path": "../../assets/image/foodDelivery/gallery-1.png"
+      },
+      {
+        "path": "../../assets/image/foodDelivery/gallery-2.png"
+      },
+      {
+        "path": "../../assets/image/foodDelivery/gallery-3.png"
+      },
+      {
+        "path": "../../assets/image/foodDelivery/gallery-4.png"
+      }
+    ],
+    "title": "Let’s take your Delivery Experience to the next level",
+    "text": "Pick one of our stock themes, or create your custom theme with the most advanced theme editor on any online survey building tool. Pick one of our stock themes, or create your custom theme with the most advanced theme editor on any online survey building tool."
+  },
+
+  "DOWNLOAD_APP_DATA": {
+    "sectionImage": "../../assets/image/foodDelivery/download-app.png",
+    "title": "Connecting our user with iOS  & Android apps. Download from iTune & Play store",
+    "text": "Pick one of our stock themes, or create your custom theme with the most advanced theme editor on any online survey building tool. We’re driven beyond just finishing the projects. We want to find solutions using our website & apps.",
+    "buttons": [
+      {
+        "icon": "../../assets/image/foodDelivery/app-store.svg",
+        "title": "App Store",
+        "text": "Download on the",
+        "link": "#"
+      },
+      {
+        "icon": "../../assets/image/foodDelivery/play-store.svg",
+        "title": "Google Play",
+        "text": "Download on the",
+        "link": "#"
+      }
+    ]
+  },
+
+  "HOW_WORKS_DATA": {
+    "title": "Let’s see how it works",
+    "posts": [
+      {
+        "icon": "../../assets/image/foodDelivery/how-works-1.png",
+        "title": "Become a Delivery Man",
+        "text": "As a delivery driver, you'll make reliable money—working anytime, anywhere.",
+        "link": {
+          "label": "Start Earning",
+          "path": "#"
+        }
+      },
+      {
+        "icon": "../../assets/image/foodDelivery/how-works-2.png",
+        "title": "Become a Partner",
+        "text": "Grow your business and reach new customers by partnering with us.",
+        "link": {
+          "label": "Sign up your store",
+          "path": "#"
+        }
+      },
+      {
+        "icon": "../../assets/image/foodDelivery/how-works-3.png",
+        "title": "Try Android/iOS App",
+        "text": "Get the best DoorDash experience with live order tracking.",
+        "link": {
+          "label": "Get the app",
+          "path": "#"
+        }
+      }
+    ]
+  },
+  "PRODUCT_CATEGORY": {
+    "title": "Popular categories by food",
+    "list": [
+      {
+        "label": "Pizza",
+        "link": "#"
+      },
+      {
+        "label": "Breakfast",
+        "link": "#"
+      },
+      {
+        "label": "Japanese",
+        "link": "#"
+      },
+      {
+        "label": "Halal",
+        "link": "#"
+      },
+      {
+        "label": "Dessert",
+        "link": "#"
+      },
+      {
+        "label": "Lebanese",
+        "link": "#"
+      },
+      {
+        "label": "American",
+        "link": "#"
+      },
+      {
+        "label": "Sushi",
+        "link": "#"
+      },
+      {
+        "label": "Greek",
+        "link": "#"
+      },
+      {
+        "label": "Thai",
+        "link": "#"
+      },
+      {
+        "label": "Vegetarian",
+        "link": "#"
+      },
+      {
+        "label": "Italian",
+        "link": "#"
+      },
+      {
+        "label": "Mexican",
+        "link": "#"
+      },
+      {
+        "label": "Indian",
+        "link": "#"
+      },
+      {
+        "label": "Chinese",
+        "link": "#"
+      },
+      {
+        "label": "Breakfast",
+        "link": "#"
+      },
+      {
+        "label": "Burgers",
+        "link": "#"
+      }
+    ]
+  },
+  "AVAILABLE_RESTAURANTS_DATA": {
+    "title": "Available Restaurant Nearby Area",
+    "posts": [
+      {
+        "image": "../../assets/image/foodDelivery/available-restaurant-1.png",
+        "title": "Pizza Hut Delicious Pizza",
+        "link": "#",
+        "categories": [
+          { "name": "American" },
+          { "name": "Fast Food" },
+          { "name": "Burgers" }
+        ]
+      },
+      {
+        "image": "../../assets/image/foodDelivery/available-restaurant-2.png",
+        "title": "Chipotle Mexican Grill (2675 Geary Boulevard)",
+        "link": "#",
+        "categories": [
+          { "name": "American" },
+          { "name": "Fast Food" },
+          { "name": "Burgers" }
+        ]
+      },
+      {
+        "image": "../../assets/image/foodDelivery/available-restaurant-3.png",
+        "title": "McDonald's® Burgers (Fillmore)",
+        "link": "#",
+        "categories": [
+          { "name": "American" },
+          { "name": "Fast Food" },
+          { "name": "Burgers" }
+        ]
+      },
+      {
+        "image": "../../assets/image/foodDelivery/available-restaurant-4.png",
+        "title": "The Baked Bear San Francisco",
+        "link": "#",
+        "categories": [
+          { "name": "American" },
+          { "name": "Fast Food" },
+          { "name": "Burgers" }
+        ]
+      },
+      {
+        "image": "../../assets/image/foodDelivery/available-restaurant-5.png",
+        "title": "Shake Shack  (3060 Fillmore Street)",
+        "link": "#",
+        "categories": [
+          { "name": "American" },
+          { "name": "Fast Food" },
+          { "name": "Burgers" }
+        ]
+      },
+      {
+        "image": "../../assets/image/foodDelivery/available-restaurant-6.png",
+        "title": "Chubby Noodle Chinese Takeout",
+        "link": "#",
+        "categories": [
+          { "name": "American" },
+          { "name": "Fast Food" },
+          { "name": "Burgers" }
+        ]
+      }
+    ]
+  }
+}
