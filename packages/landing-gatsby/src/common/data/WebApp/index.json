@@ -31,48 +31,48 @@
       "offset": 70
     }
   ],
-  "BANNER_DATA": {
-    "title": "Ultimate web app to monitor your customer support track",
-    "text": "There will be a day–in our lifetime–when we get to celebrate every person on the planet having access. Moment Pro is the best software platform to collect reviews.",
-    "tagline": "*No Credit card required",
-    "button": {
-      "label": "Try it for free",
-      "link": "#"
-    },
-    "image": [
-      {
-        "src": "../../assets/image/webApp/banner-1.png"
-      }
-    ]
+ "BANNER_DATA": {
+  "title": "Empowering Sustainable Solutions Across Environments",
+  "text": "IBEX Bionomics delivers cutting-edge technology for aquaculture, agriculture, and environmental remediation. Discover tools and systems that transform ecosystems and elevate productivity.",
+  "tagline": "*Partnering innovation with impact",
+  "button": {
+    "label": "Explore Our Technologies",
+    "link": "/technologies"
   },
+  "image": [
+    {
+      "src": "/IbexBionomics/ibexBionomicsBanner2.png"
+    }
+  ]
+},
   "FEATURE_DATA": {
-    "blockTitle": {
-      "title": "Choose dashboard for every stage of your customer journey",
-      "text": "The rise of mobile devices transforms the way we consume information entirely and the world\"s most relevant channels such as Facebook and Instagram are almost exclusively used on mobile"
-    },
-    "post": [
-      {
-        "icon": "../../assets/image/webApp/feature-1.png",
-        "text": "Fast Performance"
-      },
-      {
-        "icon": "../../assets/image/webApp/feature-2.png",
-        "text": "User Customization"
-      },
-      {
-        "icon": "../../assets/image/webApp/feature-3.png",
-        "text": "Modify structure"
-      },
-      {
-        "icon": "../../assets/image/webApp/feature-4.png",
-        "text": "Customer Analysis"
-      },
-      {
-        "icon": "../../assets/image/webApp/feature-5.png",
-        "text": "Instant Support"
-      }
-    ]
+  "blockTitle": {
+    "title": "Engineered Biotech for Every Environmental Challenge",
+    "text": "IBEX Bionomics delivers patented, organic biotechnologies to boost yields, regenerate ecosystems, and cut operational costs—across aquaculture, agriculture, and environmental remediation."
   },
+  "post": [
+    {
+      "icon": "/IbexBionomics/HPAquaculture.jpg",
+      "text": "Up to 70% Higher Aquaculture Yield\nOrganic kits like HYDROLIFE and MINERVIX optimize water ecosystems, reduce sludge, and eliminate the need for forced aeration."
+    },
+    {
+      "icon": "/IbexBionomics/HPNu3zer.jpg",
+      "text": "Bio-Optimized Crop Nutrition\nFormulas like Nu3zer and RAYFOL stimulate photosynthesis, boost pest resistance, and increase harvest homogeneity."
+    },
+    {
+      "icon": "/IbexBionomics/HPHydrocarbon.jpg",
+      "text": "Enzymatic Environmental Cleanup\nProducts like D-TOXOL and X-BLAST biologically degrade hydrocarbons, metals, and sludge without mechanical intervention."
+    },
+    {
+      "icon": "/IbexBionomics/HPPlantGrowth.jpg",
+      "text": "Certified Organic & Planet Friendly\nAll solutions are certified organic, safe for biodiversity, and designed to reduce carbon and nitrogen pollution."
+    },
+    {
+      "icon": "/IbexBionomics/HPMicroorganisms.jpg",
+      "text": "Custom Selection Kits\nIBEX engineers site-specific kits combining microbes, enzymes, and minerals for soil, water, and crop-specific solutions."
+    }
+  ]
+},
   "VIDEO_DATA": {
     "title": "Meet Amelia, Lead Software Engineer",
     "videoID": "hW98BFnVCm8"

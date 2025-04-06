@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PagesDropdown from './PagesDropdown';
 import NavbarStyle from './navbar.style';
 
 const Navbar = ({ className, children, navbarStyle, ...props }) => {
@@ -13,6 +14,7 @@ const Navbar = ({ className, children, navbarStyle, ...props }) => {
 
   return (
     <NavbarStyle className={addAllClasses.join(' ')} {...props}>
+      <PagesDropdown />
       {children}
     </NavbarStyle>
   );

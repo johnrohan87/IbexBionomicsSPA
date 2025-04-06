@@ -1,5 +1,5 @@
 import themeGet from '@styled-system/theme-get';
-import BannerBg from 'common/assets/image/webApp/banner-bg.png';
+import BannerBg from '../../../../static/IbexBionomics/IbexBionomicsPlaceHolderImage.png'
 import styled from 'styled-components';
 const BannerArea = styled.section`
   padding-top: 270px;

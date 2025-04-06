@@ -9,6 +9,7 @@
     "@redq/reuse-modal": "^1.2.4",
     "@styled-system/theme-get": "^5.1.2",
     "animate.css": "^4.1.1",
+    "framer-motion": "5.5.5",
     "gatsby": "^3.8.0",
     "gatsby-plugin-image": "^1.7.1",
     "gatsby-plugin-manifest": "^3.7.1",

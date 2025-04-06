@@ -16,9 +16,7 @@ const Features = () => {
             text
           }
           post {
-            icon {
-              publicURL
-            }
+            icon
             text
           }
         }
@@ -39,7 +37,7 @@ const Features = () => {
             <Box className="post" key={`feature-post-key-${index}`}>
               <div className='feature-image-box'>
                 <div className='feature-image-box-inner'>
-                  <Image src={icon.publicURL} alt="" />
+                  <Image src={icon} alt="" />
                 </div>
               </div>
               <Heading as="h3" content={text} />
