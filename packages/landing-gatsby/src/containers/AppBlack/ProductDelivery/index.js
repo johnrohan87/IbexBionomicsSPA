@@ -25,7 +25,7 @@ const ProductDelivery = ({ setImg }) => {
               gatsbyImageData(
                 layout: FULL_WIDTH
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }
@@ -35,7 +35,7 @@ const ProductDelivery = ({ setImg }) => {
                 gatsbyImageData(
                   layout: FULL_WIDTH
                   placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [AUTO, WEBP]
                 )
               }
             }

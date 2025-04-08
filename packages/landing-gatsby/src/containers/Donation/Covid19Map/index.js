@@ -17,7 +17,7 @@ const Covid19Map = () => {
           gatsbyImageData(
             width: 957
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

@@ -25,7 +25,7 @@ const ChooseUs = () => {
               gatsbyImageData(
                 width: 724
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }

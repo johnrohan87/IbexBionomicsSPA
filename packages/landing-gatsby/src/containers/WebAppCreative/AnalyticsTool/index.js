@@ -23,7 +23,7 @@ const AnalyticsTool = () => {
           gatsbyImageData(
             width: 761
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

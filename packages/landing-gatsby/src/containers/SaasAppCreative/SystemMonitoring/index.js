@@ -17,7 +17,7 @@ const SystemMonitoring = () => {
           gatsbyImageData(
             width: 572
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -26,7 +26,7 @@ const SystemMonitoring = () => {
           gatsbyImageData(
             width: 360
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

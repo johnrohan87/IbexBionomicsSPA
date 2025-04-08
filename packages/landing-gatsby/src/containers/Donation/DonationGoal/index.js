@@ -31,7 +31,7 @@ const DonationGoal = () => {
           gatsbyImageData(
             width: 806
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

@@ -19,7 +19,7 @@ const ScrollableSticky = ({ children }) => {
               gatsbyImageData(
                 layout: FULL_WIDTH
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }
@@ -32,7 +32,7 @@ const ScrollableSticky = ({ children }) => {
               gatsbyImageData(
                 layout: FULL_WIDTH
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }

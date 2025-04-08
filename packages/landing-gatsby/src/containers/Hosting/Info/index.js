@@ -31,7 +31,7 @@ const InfoSection = ({
           gatsbyImageData(
             width: 825
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -40,7 +40,7 @@ const InfoSection = ({
           gatsbyImageData(
             width: 389
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

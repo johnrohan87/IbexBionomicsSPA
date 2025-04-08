@@ -16,7 +16,7 @@ const DesignedAndBuilt = () => {
               gatsbyImageData(
                 width: 707
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }

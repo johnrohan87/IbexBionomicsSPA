@@ -34,7 +34,7 @@ const WalletExperience = () => {
                 gatsbyImageData(
                   width: 700
                   placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [AUTO, WEBP]
                 )
               }
             }

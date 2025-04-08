@@ -20,7 +20,7 @@ const AdvancedAnalytics = () => {
           gatsbyImageData(
             width: 714
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

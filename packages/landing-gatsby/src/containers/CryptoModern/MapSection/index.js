@@ -23,7 +23,7 @@ const MapSection = () => {
           gatsbyImageData(
             width: 1102
             placeholder: BLURRED
-            formats: [AUTO, PNG, AVIF]
+            formats: [AUTO, PNG]
           )
         }
       }

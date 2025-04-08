@@ -23,7 +23,7 @@ const HumanityBlock = ({ row, col }) => {
               gatsbyImageData(
                 width: 633
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }

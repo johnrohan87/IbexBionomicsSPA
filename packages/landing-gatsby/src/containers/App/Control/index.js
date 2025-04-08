@@ -35,7 +35,7 @@ const ControlSection = ({
           gatsbyImageData(
             width: 899
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -44,7 +44,7 @@ const ControlSection = ({
           gatsbyImageData(
             width: 582
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

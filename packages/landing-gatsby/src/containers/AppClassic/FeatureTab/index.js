@@ -35,7 +35,7 @@ const FeatureTab = () => {
                 gatsbyImageData(
                   width: 373
                   placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [AUTO, WEBP]
                 )
               }
             }

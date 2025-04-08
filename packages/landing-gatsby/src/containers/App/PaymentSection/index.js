@@ -36,7 +36,7 @@ const PaymentSection = ({
           gatsbyImageData(
             width: 860
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -45,7 +45,7 @@ const PaymentSection = ({
           gatsbyImageData(
             width: 454
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

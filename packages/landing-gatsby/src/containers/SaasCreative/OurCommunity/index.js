@@ -15,7 +15,7 @@ const OurCommunity = () => {
           gatsbyImageData(
             width: 1167
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

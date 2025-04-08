@@ -30,7 +30,7 @@ const AvailableStore = () => {
               gatsbyImageData(
                 width: 577
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }

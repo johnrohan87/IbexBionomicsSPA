@@ -25,7 +25,7 @@ const GuaranteeSection = ({
           gatsbyImageData(
             width: 510
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

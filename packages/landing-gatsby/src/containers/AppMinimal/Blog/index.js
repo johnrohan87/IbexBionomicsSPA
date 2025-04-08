@@ -20,7 +20,7 @@ const Blog = () => {
               gatsbyImageData(
                 layout: FULL_WIDTH
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }

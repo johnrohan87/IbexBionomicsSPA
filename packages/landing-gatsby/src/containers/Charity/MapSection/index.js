@@ -17,7 +17,7 @@ const MapSection = () => {
           gatsbyImageData(
             width: 847
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

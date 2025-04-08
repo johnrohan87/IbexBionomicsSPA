@@ -23,7 +23,7 @@ const WalletDashboard = ({ secTitleWrapper, secText, secHeading }) => {
               gatsbyImageData(
                 width: 935
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }

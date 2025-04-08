@@ -27,7 +27,7 @@ const VisitorSection = ({
           gatsbyImageData(
             width: 1017
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -36,7 +36,7 @@ const VisitorSection = ({
           gatsbyImageData(
             width: 1031
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

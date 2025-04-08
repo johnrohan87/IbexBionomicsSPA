@@ -76,7 +76,7 @@ const BannerSection = ({
           gatsbyImageData(
             width: 840
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

@@ -47,7 +47,7 @@ const Banner = () => {
           gatsbyImageData(
             width: 1252
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -58,7 +58,7 @@ const Banner = () => {
           gatsbyImageData(
             width: 577
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

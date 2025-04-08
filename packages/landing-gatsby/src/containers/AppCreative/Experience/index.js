@@ -55,7 +55,7 @@ const Experiences = () => {
               gatsbyImageData(
                 width: 1230
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }

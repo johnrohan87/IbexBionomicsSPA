@@ -19,7 +19,7 @@ const DashboardSection = ({ row, col, title, btnStyle, description }) => {
           gatsbyImageData(
             width: 981
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
