@@ -6,7 +6,14 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ["auto", "webp"], // Remove "avif"
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-styled-components`,
