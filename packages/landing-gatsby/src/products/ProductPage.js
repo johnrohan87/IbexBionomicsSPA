@@ -2,6 +2,15 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 
+// Import dynamic layout blocks
+import HorizontalToVerticalDynamicCards4 from "./containers/Blocks/HorizontalToVerticalDynamicCards4";
+import PictureWithContent from './containers/Blocks/PictureWithContent'
+
+const components = {
+  HorizontalToVerticalDynamicCards4,
+  PictureWithContent,
+};
+
 const Wrapper = styled.div`
   padding: 3rem 1.5rem;
   max-width: 800px;
@@ -57,42 +66,53 @@ const Badge = styled.span`
   font-weight: 600;
 `;
 
-const ProductPage = ({ data }) => {
+const ProductPage = ({ data, pageContext }) => {
   const product = data.productData;
+  const { layoutBlocks = [] } = pageContext;
 
+  console.log("✅ layoutBlocks:", layoutBlocks);
   return (
-    <Wrapper>
-      {product.image?.childImageSharp?.gatsbyImageData && (
-        <ProductImage
-          src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
-          alt={product.title}
-        />
-      )}
-      <Title>{product.title}</Title>
-      <Description>{product.grabber || product.description}</Description>
+    <>
+      <Wrapper>
+        {product.image?.childImageSharp?.gatsbyImageData && (
+          <ProductImage
+            src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
+            alt={product.title}
+          />
+        )}
+        <Title>{product.title}</Title>
+        <Description>{product.grabber || product.description}</Description>
 
-      {product.modeOfAction && (
-        <>
-          <SectionTitle>Mode of Action</SectionTitle>
-          <SectionText>{product.modeOfAction}</SectionText>
-        </>
-      )}
+        {product.modeOfAction && (
+          <>
+            <SectionTitle>Mode of Action</SectionTitle>
+            <SectionText>{product.modeOfAction}</SectionText>
+          </>
+        )}
 
-      {product.modeOfUse && (
-        <>
-          <SectionTitle>Mode of Use</SectionTitle>
-          <SectionText>{product.modeOfUse}</SectionText>
-        </>
-      )}
+        {product.modeOfUse && (
+          <>
+            <SectionTitle>Mode of Use</SectionTitle>
+            <SectionText>{product.modeOfUse}</SectionText>
+          </>
+        )}
 
-      {product.badges && product.badges.length > 0 && (
-        <BadgeGroup>
-          {product.badges.map((badge, idx) => (
-            <Badge key={idx}>{badge}</Badge>
-          ))}
-        </BadgeGroup>
-      )}
-    </Wrapper>
+        {product.badges && product.badges.length > 0 && (
+          <BadgeGroup>
+            {product.badges.map((badge, idx) => (
+              <Badge key={idx}>{badge}</Badge>
+            ))}
+          </BadgeGroup>
+        )}
+      </Wrapper>
+
+      {/* Render dynamic layout blocks from gatsby-node context */}
+      {layoutBlocks.map((block, idx) => {
+        const BlockComponent = components[block.type];
+        if (!BlockComponent) return null;
+        return <BlockComponent key={idx} {...block.props} />;
+      })}
+    </>
   );
 };
 
