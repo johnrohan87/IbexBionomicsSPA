@@ -41,6 +41,7 @@ const Card = styled.div`
     transform: translateY(-5px);
   }
 
+  /* Default image style */
   .card-media {
     margin-bottom: 1rem;
     max-width: ${({ imgSize }) => imgSize || '60px'};
@@ -51,6 +52,25 @@ const Card = styled.div`
       width: 100%;
       height: auto;
       object-fit: contain;
+    }
+  }
+
+  /* Blur image with fade-out top banner style */
+  .card-media-blur {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    .blur-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 55%, rgba(0, 0, 0, 0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 55%, rgba(0, 0, 0, 0) 100%);
     }
   }
 
@@ -80,9 +100,11 @@ const HorizontalToVerticalDynamicCards4 = ({ title, items, bg, imgSize = '60px' 
 
           return (
             <Card key={idx} imgSize={imgSize}>
-              <div className="card-media">
+              <div className={item.imageStyle === 'fadeTop' ? "card-media-blur" : "card-media"}>
                 {imageObj ? (
-                  <GatsbyImage image={imageObj} alt={item.heading} />
+                  <GatsbyImage image={imageObj} alt={item.heading} className="blur-img" />
+                ) : typeof item.image === "string" ? (
+                  <img src={`/${item.image}`} alt={item.heading} className="blur-img" />
                 ) : item.icon ? (
                   <img src={item.icon} alt={item.heading} />
                 ) : null}
@@ -106,7 +128,10 @@ HorizontalToVerticalDynamicCards4.propTypes = {
       heading: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
       icon: PropTypes.string, // optional
-      image: PropTypes.object, // optional, for use with Gatsby images
+      image: PropTypes.oneOfType([
+        PropTypes.object, // for GatsbyImage
+        PropTypes.string  // for static path fallback
+      ])
     })
   ).isRequired,
 };

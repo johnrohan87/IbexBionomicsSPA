@@ -1,6 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
+import { Parallax } from 'react-scroll-parallax';
+
 
 // Import dynamic layout blocks
 import HorizontalToVerticalDynamicCards4 from "./containers/Blocks/HorizontalToVerticalDynamicCards4";
@@ -17,23 +20,62 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-const ProductImage = styled.img`
+const ProductImageWrapper = styled.div`
+  position: relative;
   width: 100%;
   border-radius: 1rem;
-  margin-bottom: 1.5rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+`;
+
+const ProductImage = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+`;
+
+const OverlayWrapper = styled.div`
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+`;
+
+const Overlay = styled.div`
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-radius: 0.75rem;
+  display: inline-block;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  max-width: 90%;
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 1rem;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: bold;
-  margin-bottom: 1rem;
   color: #14532d;
+  margin: 0.5rem 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Description = styled.p`
   font-size: 1rem;
   color: #374151;
-  margin-bottom: 1.5rem;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -73,16 +115,26 @@ const ProductPage = ({ data, pageContext }) => {
   console.log("✅ layoutBlocks:", layoutBlocks);
   return (
     <>
-      <Wrapper>
+      <ProductImageWrapper>
         {product.image?.childImageSharp?.gatsbyImageData && (
           <ProductImage
             src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
             alt={product.title}
           />
         )}
-        <Title>{product.title}</Title>
-        <Description>{product.grabber || product.description}</Description>
+        <OverlayWrapper>
+          <Fade bottom duration={1000} delay={100} once>
+            <Parallax translateY={[0, 75]}>
+              <Overlay>
+                <Title>{product.title}</Title>
+                <Description>{product.grabber || product.description}</Description>
+              </Overlay>
+            </Parallax>
+          </Fade>
+        </OverlayWrapper>
+      </ProductImageWrapper>
 
+      <Wrapper>
         {product.modeOfAction && (
           <>
             <SectionTitle>Mode of Action</SectionTitle>

@@ -5,6 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+import React from "react";
+import { ParallaxProvider } from "react-scroll-parallax";
+
 if (typeof window !== 'undefined' && 'ResizeObserver' in window) {
   // Patch ResizeObserver to suppress loop errors
   const OriginalResizeObserver = window.ResizeObserver;
@@ -34,3 +37,7 @@ if (typeof window !== 'undefined' && 'ResizeObserver' in window) {
     origConsoleError(...args);
   };
 }
+
+export const wrapRootElement = ({ element }) => (
+  <ParallaxProvider>{element}</ParallaxProvider>
+);

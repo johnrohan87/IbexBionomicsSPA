@@ -12,7 +12,7 @@ const productList = [
     title: "HYDROLIFE",
     description: "Organic plankton booster for aquaculture",
     sector: "Aquaculture",
-    imageFilename: "hydrolife.png",
+    imageFilename: "IbexBionomics/Aquaculture/WaterSide.png",
     grabber: "Boosts plankton growth for better aquaculture balance.",
     modeOfAction:
       "Stimulates chlorophyll and amylase production, enhances nutrient absorption, prevents toxic compound formation.",
@@ -30,28 +30,32 @@ const productList = [
             {
               heading: "Boosts Plankton",
               text: "Stimulates phyto- and zooplankton growth for improved nutrition.",
-              icon: "/icons/plankton.svg"
+              image: "IbexBionomics/Aquaculture/PondBloom.png",
+              imageStyle: "fadeTop"
             },
             {
               heading: "Reduces Feed & Energy",
               text: "Cuts feed and aeration energy costs by over 50%.",
-              icon: "/icons/feed.svg"
+              image: "IbexBionomics/Aquaculture/WaterDropletSide.png",
+              imageStyle: "fadeTop"
             },
             {
               heading: "Controls Sludge",
               text: "Degrades organic waste and prevents toxic gas formation.",
-              icon: "/icons/sludge.svg"
+              image: "IbexBionomics/Aquaculture/AlgaeBloom.png",
+              imageStyle: "fadeTop"
             },
             {
               heading: "Organic Certified",
               text: "Meets global standards for organic aquaculture.",
-              icon: "/icons/organic.svg"
+              image: "IbexBionomics/Aquaculture/LeafDroplet.png",
+              imageStyle: "fadeTop"
             }
           ]
         }
       }
     ]
-  },    
+  },  
   {
     id: "minervix",
     productKey: "minervix",
@@ -207,7 +211,7 @@ exports.createResolvers = ({ createResolvers, context }) => {
       image: {
         type: "File",
         resolve(source, args, context) {
-          const imagePath = path.resolve(__dirname, "src/images/products", source.imageFilename || "");
+          const imagePath = path.resolve(__dirname, "src/images", source.imageFilename || "");
           if (!fs.existsSync(imagePath)) return null;
 
           return context.nodeModel.runQuery({
