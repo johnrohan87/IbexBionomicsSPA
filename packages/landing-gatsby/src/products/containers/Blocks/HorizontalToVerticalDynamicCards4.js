@@ -1,7 +1,9 @@
 import React from 'react';
+import { withPrefix } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
 
 const Section = styled.section`
   padding: 60px 20px;
@@ -11,7 +13,6 @@ const Section = styled.section`
 const SectionHeading = styled.div`
   text-align: center;
   margin-bottom: 3rem;
-
   h2 {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 700;
@@ -31,7 +32,6 @@ const Card = styled.div`
   padding: 2rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,13 +42,11 @@ const Card = styled.div`
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
   }
 
-  /* Default image style */
+  /* plain icon / thumbnail */
   .card-media {
     margin-bottom: 1rem;
     max-width: ${({ imgSize }) => imgSize || '60px'};
     width: 100%;
-    height: auto;
-
     img {
       width: 100%;
       height: auto;
@@ -56,7 +54,7 @@ const Card = styled.div`
     }
   }
 
-  /* Blur image with fade-out top banner style */
+  /* fade‑top blur banner style */
   .card-media-blur {
     position: relative;
     width: 100%;
@@ -89,50 +87,67 @@ const Card = styled.div`
   }
 `;
 
-const HorizontalToVerticalDynamicCards4 = ({ title, items, bg, imgSize = '60px' }) => {
-  return (
-    <Section bg={bg}>
-      <SectionHeading>
-        <h2>{title}</h2>
-      </SectionHeading>
-      <Grid>
-        {items.slice(0, 4).map((item, idx) => {
-          const imageObj = getImage(item.image);
 
-          return (
-            <Card key={idx} imgSize={imgSize}>
-              <div className={item.imageStyle === 'fadeTop' ? "card-media-blur" : "card-media"}>
-                {imageObj ? (
-                  <GatsbyImage image={imageObj} alt={item.heading} className="blur-img" />
-                ) : typeof item.image === "string" ? (
-                  <img src={`/${item.image}`} alt={item.heading} className="blur-img" />
-                ) : item.icon ? (
-                  <img src={item.icon} alt={item.heading} />
-                ) : null}
-              </div>
-              <h4>{item.heading}</h4>
-              <p>{item.text}</p>
-            </Card>
-          );
-        })}
-      </Grid>
-    </Section>
-  );
-};
+const HorizontalToVerticalDynamicCards4 = ({
+  title,
+  items,
+  bg,
+  imgSize = '60px',
+}) => (
+  <Section bg={bg}>
+    <SectionHeading>
+      <h2>{title}</h2>
+    </SectionHeading>
+
+    <Grid>
+      {items.slice(0, 4).map((item, idx) => {
+        const hasBlur = item.imageStyle === 'fadeTop';
+        const wrapperClass = hasBlur ? 'card-media-blur' : 'card-media';
+
+        const gatsbyImage = getImage(item.image);
+        const imgProps = hasBlur ? { className: 'blur-img' } : {};
+
+        return (
+          <Card key={idx} imgSize={imgSize}>
+            <div className={wrapperClass}>
+              {gatsbyImage ? (
+                <GatsbyImage
+                  image={gatsbyImage}
+                  alt={item.heading}
+                  {...imgProps}
+                />
+              ) : typeof item.image === 'string' ? (
+                <img
+                  src={withPrefix('/' + item.image.replace(/^\\/+/, ''))}
+                  alt={item.heading}
+                  {...imgProps}
+                />
+              ) : item.icon ? (
+                <img src={item.icon} alt={item.heading} />
+              ) : null}
+            </div>
+
+            <h4>{item.heading}</h4>
+            <p>{item.text}</p>
+          </Card>
+        );
+      })}
+    </Grid>
+  </Section>
+);
+
 
 HorizontalToVerticalDynamicCards4.propTypes = {
   title: PropTypes.string.isRequired,
   bg: PropTypes.string,
-  imgSize: PropTypes.string, // e.g., "60px" or "100px"
+  imgSize: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       heading: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
-      icon: PropTypes.string, // optional
-      image: PropTypes.oneOfType([
-        PropTypes.object, // for GatsbyImage
-        PropTypes.string  // for static path fallback
-      ])
+      icon: PropTypes.string,
+      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      imageStyle: PropTypes.string,
     })
   ).isRequired,
 };
