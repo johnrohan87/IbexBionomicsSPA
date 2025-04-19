@@ -26,7 +26,10 @@ const Grid = styled.div`
   gap: 2rem;
 `;
 
+
 const Card = styled.div`
+  --imgSize: ${({ imgSize }) => imgSize || '60px'};
+
   background: white;
   border-radius: 1rem;
   padding: 2rem;
@@ -45,7 +48,7 @@ const Card = styled.div`
   /* plain icon / thumbnail */
   .card-media {
     margin-bottom: 1rem;
-    max-width: ${({ imgSize }) => imgSize || '60px'};
+    max-width: var(--imgSize);
     width: 100%;
     img {
       width: 100%;
@@ -54,7 +57,7 @@ const Card = styled.div`
     }
   }
 
-  /* fade‑top blur banner style */
+  /* fade‑top blur banner */
   .card-media-blur {
     position: relative;
     width: 100%;
@@ -88,12 +91,7 @@ const Card = styled.div`
 `;
 
 
-const HorizontalToVerticalDynamicCards4 = ({
-  title,
-  items,
-  bg,
-  imgSize = '60px',
-}) => (
+const HorizontalToVerticalDynamicCards4 = ({ title, items, bg, imgSize = '60px' }) => (
   <Section bg={bg}>
     <SectionHeading>
       <h2>{title}</h2>
@@ -110,19 +108,16 @@ const HorizontalToVerticalDynamicCards4 = ({
         return (
           <Card key={idx} imgSize={imgSize}>
             <div className={wrapperClass}>
+              {/* 1️⃣ Gatsby‑Image variant */}
               {gatsbyImage ? (
-                <GatsbyImage
-                  image={gatsbyImage}
-                  alt={item.heading}
-                  {...imgProps}
-                />
-              ) : typeof item.image === 'string' ? (
+                <GatsbyImage image={gatsbyImage} alt={item.heading} {...imgProps} />
+              ) : /* 2️⃣ static path fallback */ typeof item.image === 'string' ? (
                 <img
-                  src={withPrefix('/' + item.image.replace(/^\\/+/, ''))}
+                  src={withPrefix('/' + item.image.replace(/^\/+/g, ''))}
                   alt={item.heading}
                   {...imgProps}
                 />
-              ) : item.icon ? (
+              ) : /* 3️⃣ simple icon path */ item.icon ? (
                 <img src={item.icon} alt={item.heading} />
               ) : null}
             </div>
