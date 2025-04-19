@@ -68,3 +68,48 @@ exports.createPages = async ({ graphql, actions }) => {
     component: path.resolve("./src/products/Products.js")
   });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type ProductData implements Node @dontInfer {
+      id: ID!
+      title: String!
+      description: String!
+      grabber: String
+      modeOfAction: String
+      modeOfUse: String
+      badges: [String]
+      sector: String!
+      slug: String!
+      imageFilename: String!
+      image: File @link(from: "image___NODE")
+    }
+  `);
+};
+
+exports.createResolvers = ({ createResolvers, reporter }) => {
+  createResolvers({
+    ProductData: {
+      image: {
+        type: 'File',
+        resolve(source, _args, context) {
+          const absPath = path.resolve(__dirname, 'src/images', source.imageFilename || '');
+          if (!fs.existsSync(absPath)) {
+            reporter.warn(`Image not found for product “${source.id}”: ${absPath}`);
+            return null;
+          }
+
+          return context.nodeModel.runQuery({
+            query: {
+              filter: {
+                absolutePath: { eq: absPath },
+              },
+            },
+            type: 'File',
+            firstOnly: true,
+          });
+        },
+      },
+    },
+  });
+};
