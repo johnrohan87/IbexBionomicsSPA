@@ -74,13 +74,13 @@ const ProductCard = ({ product }) => (
 
 const Products = () => {
   const data = useStaticQuery(graphql`
-    query ProductListQuery {
-      allProductData {
-        nodes {
-          ...ProductFields
-        }
+    {
+    allProductData {
+      nodes {
+        ...ProductFields
       }
     }
+  }
 
     fragment ProductFields on ProductData {
       id

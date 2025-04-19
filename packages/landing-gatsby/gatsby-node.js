@@ -83,7 +83,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       sector: String!
       slug: String!
       imageFilename: String!
-      image: File @link(from: "image___NODE") @link(from: "image___NODE")
+      image: File @link(from: "image___NODE")
     }
   `);
 };
