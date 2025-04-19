@@ -73,6 +73,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
     type ProductData implements Node @dontInfer {
       id: ID!
+      productKey: String!
       title: String!
       description: String!
       grabber: String
@@ -82,7 +83,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       sector: String!
       slug: String!
       imageFilename: String!
-      image: File @link(from: "image___NODE")
+      image: File @link(from: "image___NODE") @link(from: "image___NODE")
     }
   `);
 };
