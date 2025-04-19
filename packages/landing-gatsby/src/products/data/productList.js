@@ -1,3 +1,8 @@
+import pondBloom   from '../../images/IbexBionomics/Aquaculture/PondBloom.png';
+import waterDrop   from '../../images/IbexBionomics/Aquaculture/WaterDropletSide.png';
+import algaeBloom  from '../../images/IbexBionomics/Aquaculture/AlgaeBloom.png';
+import leafDroplet from '../../images/IbexBionomics/Aquaculture/LeafDroplet.png';
+
 const productList = [
     {
       id: "hydrolife",
@@ -23,25 +28,25 @@ const productList = [
               {
                 heading: "Boosts Plankton",
                 text: "Stimulates phyto- and zooplankton growth for improved nutrition.",
-                image: "IbexBionomics/Aquaculture/PondBloom.png",
+                image: pondBloom,
                 imageStyle: "fadeTop"
               },
               {
                 heading: "Reduces Feed & Energy",
                 text: "Cuts feed and aeration energy costs by over 50%.",
-                image: "IbexBionomics/Aquaculture/WaterDropletSide.png",
+                image: waterDrop,
                 imageStyle: "fadeTop"
               },
               {
                 heading: "Controls Sludge",
                 text: "Degrades organic waste and prevents toxic gas formation.",
-                image: "IbexBionomics/Aquaculture/AlgaeBloom.png",
+                image: algaeBloom,
                 imageStyle: "fadeTop"
               },
               {
                 heading: "Organic Certified",
                 text: "Meets global standards for organic aquaculture.",
-                image: "IbexBionomics/Aquaculture/LeafDroplet.png",
+                image: leafDroplet,
                 imageStyle: "fadeTop"
               }
             ]
