@@ -1,122 +1,198 @@
 import React from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql } from "gatsby";
 import styled from "styled-components";
-import { Card, CardContent } from "./containers/Card/card";
+import Fade from "react-reveal/Fade";
 
+// Dynamic layout blocks (extend as needed)
+import HorizontalToVerticalDynamicCards4 from "./containers/Blocks/HorizontalToVerticalDynamicCards4";
+import PictureWithContent from "./containers/Blocks/PictureWithContent";
+
+/* -------------------------------------------------- */
+/*  Styled Components                                 */
+/* -------------------------------------------------- */
 const Wrapper = styled.div`
   padding: 3rem 1.5rem;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
 `;
 
-const Title = styled.h1`
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  color: #14532d;
-`;
-
-const SectorSection = styled.div`
-  margin-bottom: 4rem;
-`;
-
-const SectorTitle = styled.h2`
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #15803d;
-  color: #15803d;
-`;
-
-const ProductGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-`;
-
-const ProductImage = styled.img`
-  border-radius: 0.75rem;
-  margin-bottom: 1rem;
+const Hero = styled.div`
+  position: relative;
   width: 100%;
-  object-fit: cover;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
 `;
 
-const ProductTitle = styled.h3`
-  font-size: 1.25rem;
+const HeroImage = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+`;
+
+const OverlayWrap = styled.div`
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+`;
+
+const Overlay = styled.div`
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  max-width: 90%;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  animation: fadeInUp 0.9s ease-in-out;
+`;
+
+const Title = styled.h1`
+  font-size: 1.75rem;
   font-weight: bold;
-  color: #166534;
-  margin-bottom: 0.5rem;
+  color: #14532d;
+  margin: 0.5rem 0;
 `;
 
-const ProductDesc = styled.p`
-  font-size: 0.875rem;
+const Subtitle = styled.p`
+  font-size: 1rem;
   color: #374151;
+  margin: 0;
 `;
 
-const ProductCard = ({ product }) => (
-  <Link to={product.slug || "#"} style={{ textDecoration: "none" }}>
-    <Card>
-      <CardContent>
+const SectionTitle = styled.h2`
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #166534;
+`;
+
+const SectionText = styled.p`
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+`;
+
+const BadgeGroup = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+`;
+
+const Badge = styled.span`
+  background-color: #e0fce0;
+  color: #1f7a1f;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+`;
+
+/* Map of available layout blocks */
+const blocks = {
+  HorizontalToVerticalDynamicCards4,
+  PictureWithContent,
+};
+
+/* -------------------------------------------------- */
+/*  Component                                         */
+/* -------------------------------------------------- */
+const ProductPage = ({ data, pageContext }) => {
+  const product = data.productData;
+  const { layoutBlocks = [] } = pageContext;
+
+  return (
+    <>
+      {/* Hero section */}
+      <Hero>
         {product.image?.childImageSharp?.gatsbyImageData && (
-          <ProductImage
+          <HeroImage
             src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
             alt={product.title}
           />
         )}
-        <ProductTitle>{product.title}</ProductTitle>
-        <ProductDesc>{product.description}</ProductDesc>
-      </CardContent>
-    </Card>
-  </Link>
-);
+        <OverlayWrap>
+          <Fade bottom duration={800} delay={100} once>
+            <Overlay>
+              <Title>{product.title}</Title>
+              <Subtitle>{product.grabber || product.description}</Subtitle>
+            </Overlay>
+          </Fade>
+        </OverlayWrap>
+      </Hero>
 
-const Products = () => {
-  const data = useStaticQuery(graphql`
-    fragment ProductFields on ProductData {
-      id
-      title
-      description
-      sector
-      slug
-      image {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-    }
+      {/* Text Details */}
+      <Wrapper>
+        {product.modeOfAction && (
+          <>
+            <SectionTitle>Mode of Action</SectionTitle>
+            <SectionText>{product.modeOfAction}</SectionText>
+          </>
+        )}
+        {product.modeOfUse && (
+          <>
+            <SectionTitle>Mode of Use</SectionTitle>
+            <SectionText>{product.modeOfUse}</SectionText>
+          </>
+        )}
+        {product.badges?.length > 0 && (
+          <BadgeGroup>
+            {product.badges.map((b, i) => (
+              <Badge key={i}>{b}</Badge>
+            ))}
+          </BadgeGroup>
+        )}
+      </Wrapper>
 
-    query ProductListQuery {
-      allProductData {
-        nodes {
-          ...ProductFields
-        }
-      }
-    }
-  `);
-
-  const products = data.allProductData.nodes;
-
-  const sectors = ["Aquaculture", "Agriculture", "Environmental Remediation"];
-
-  return (
-    <Wrapper>
-      <Title>IBEX Bionomics Product Solutions</Title>
-      {sectors.map((sector) => (
-        <SectorSection key={sector}>
-          <SectorTitle>{sector}</SectorTitle>
-          <ProductGrid>
-            {products
-              .filter((product) => product.sector === sector)
-              .map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-          </ProductGrid>
-        </SectorSection>
-      ))}
-    </Wrapper>
+      {/* Dynamic layout blocks */}
+      {layoutBlocks.map((block, idx) => {
+        const BlockComp = blocks[block.type];
+        if (!BlockComp) return null;
+        return <BlockComp key={idx} {...block.props} />;
+      })}
+    </>
   );
 };
 
-export default Products;
+/* -------------------------------------------------- */
+/*  Page Query + fragment                             */
+/* -------------------------------------------------- */
+export const query = graphql`
+  query ProductPageQuery($id: String!) {
+    productData(id: { eq: $id }) {
+      ...ProductPageFields
+    }
+  }
+
+  fragment ProductPageFields on ProductData {
+    id
+    productKey
+    title
+    description
+    grabber
+    modeOfAction
+    modeOfUse
+    badges
+    image {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+      }
+    }
+  }
+`;
+
+export default ProductPage;
