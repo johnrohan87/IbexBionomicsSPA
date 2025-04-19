@@ -1,190 +1,122 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import styled from "styled-components";
-import Fade from "react-reveal/Fade";
-import { Parallax } from 'react-scroll-parallax';
-
-
-// Import dynamic layout blocks
-import HorizontalToVerticalDynamicCards4 from "./containers/Blocks/HorizontalToVerticalDynamicCards4";
-import PictureWithContent from './containers/Blocks/PictureWithContent'
-
-const components = {
-  HorizontalToVerticalDynamicCards4,
-  PictureWithContent,
-};
+import { Card, CardContent } from "./containers/Card/card";
 
 const Wrapper = styled.div`
   padding: 3rem 1.5rem;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 `;
 
-const ProductImageWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  border-radius: 1rem;
-  overflow: hidden;
-  margin-bottom: 2rem;
+const Title = styled.h1`
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #14532d;
+`;
+
+const SectorSection = styled.div`
+  margin-bottom: 4rem;
+`;
+
+const SectorTitle = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #15803d;
+  color: #15803d;
+`;
+
+const ProductGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 `;
 
 const ProductImage = styled.img`
-  width: 100%;
-  height: auto;
-  display: block;
-`;
-
-const OverlayWrapper = styled.div`
-  position: absolute;
-  bottom: 40%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-`;
-
-const Overlay = styled.div`
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1rem 1.5rem;
-  text-align: center;
   border-radius: 0.75rem;
-  display: inline-block;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(6px);
-  max-width: 90%;
-
-  @media (max-width: 768px) {
-    padding: 0.75rem 1rem;
-  }
-`;
-
-const Title = styled.h1`
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #14532d;
-  margin: 0.5rem 0;
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
-`;
-
-const Description = styled.p`
-  font-size: 1rem;
-  color: #374151;
-  margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 0.95rem;
-  }
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  color: #166534;
-`;
-
-const SectionText = styled.p`
-  font-size: 0.95rem;
-  color: #444;
   margin-bottom: 1rem;
+  width: 100%;
+  object-fit: cover;
 `;
 
-const BadgeGroup = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+const ProductTitle = styled.h3`
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #166534;
+  margin-bottom: 0.5rem;
 `;
 
-const Badge = styled.span`
-  background-color: #e0fce0;
-  color: #1f7a1f;
-  font-size: 0.75rem;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  font-weight: 600;
+const ProductDesc = styled.p`
+  font-size: 0.875rem;
+  color: #374151;
 `;
 
-const ProductPage = ({ data, pageContext }) => {
-  const product = data.productData;
-  const { layoutBlocks = [] } = pageContext;
-
-  console.log("✅ layoutBlocks:", layoutBlocks);
-  return (
-    <>
-      <ProductImageWrapper>
+const ProductCard = ({ product }) => (
+  <Link to={product.slug || "#"} style={{ textDecoration: "none" }}>
+    <Card>
+      <CardContent>
         {product.image?.childImageSharp?.gatsbyImageData && (
           <ProductImage
             src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
             alt={product.title}
           />
         )}
-        <OverlayWrapper>
-          <Fade bottom duration={1000} delay={100} once>
-            <Parallax translateY={[0, 75]}>
-              <Overlay>
-                <Title>{product.title}</Title>
-                <Description>{product.grabber || product.description}</Description>
-              </Overlay>
-            </Parallax>
-          </Fade>
-        </OverlayWrapper>
-      </ProductImageWrapper>
+        <ProductTitle>{product.title}</ProductTitle>
+        <ProductDesc>{product.description}</ProductDesc>
+      </CardContent>
+    </Card>
+  </Link>
+);
 
-      <Wrapper>
-        {product.modeOfAction && (
-          <>
-            <SectionTitle>Mode of Action</SectionTitle>
-            <SectionText>{product.modeOfAction}</SectionText>
-          </>
-        )}
-
-        {product.modeOfUse && (
-          <>
-            <SectionTitle>Mode of Use</SectionTitle>
-            <SectionText>{product.modeOfUse}</SectionText>
-          </>
-        )}
-
-        {product.badges && product.badges.length > 0 && (
-          <BadgeGroup>
-            {product.badges.map((badge, idx) => (
-              <Badge key={idx}>{badge}</Badge>
-            ))}
-          </BadgeGroup>
-        )}
-      </Wrapper>
-
-      {/* Render dynamic layout blocks from gatsby-node context */}
-      {layoutBlocks.map((block, idx) => {
-        const BlockComponent = components[block.type];
-        if (!BlockComponent) return null;
-        return <BlockComponent key={idx} {...block.props} />;
-      })}
-    </>
-  );
-};
-
-export const query = graphql`
-  query ProductPageQuery($id: String!) {
-    productData(id: { eq: $id }) {
+const Products = () => {
+  const data = useStaticQuery(graphql`
+    fragment ProductFields on ProductData {
       id
       title
       description
-      grabber
-      modeOfAction
-      modeOfUse
-      badges
+      sector
+      slug
       image {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
-  }
-`;
 
-export default ProductPage;
+    query ProductListQuery {
+      allProductData {
+        nodes {
+          ...ProductFields
+        }
+      }
+    }
+  `);
+
+  const products = data.allProductData.nodes;
+
+  const sectors = ["Aquaculture", "Agriculture", "Environmental Remediation"];
+
+  return (
+    <Wrapper>
+      <Title>IBEX Bionomics Product Solutions</Title>
+      {sectors.map((sector) => (
+        <SectorSection key={sector}>
+          <SectorTitle>{sector}</SectorTitle>
+          <ProductGrid>
+            {products
+              .filter((product) => product.sector === sector)
+              .map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+          </ProductGrid>
+        </SectorSection>
+      ))}
+    </Wrapper>
+  );
+};
+
+export default Products;

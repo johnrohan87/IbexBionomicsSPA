@@ -29,8 +29,8 @@ const Card = styled.div`
   background: white;
   border-radius: 1rem;
   padding: 2rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   display: flex;
   flex-direction: column;
@@ -38,7 +38,8 @@ const Card = styled.div`
   text-align: center;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
   }
 
   /* Default image style */
