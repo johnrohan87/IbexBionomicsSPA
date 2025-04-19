@@ -55,21 +55,42 @@ const ProductDesc = styled.p`
   color: #374151;
 `;
 
+const ProductCard = ({ product }) => (
+  <Link to={product.slug || "#"} style={{ textDecoration: "none" }}>
+    <Card>
+      <CardContent>
+        {product.image?.childImageSharp?.gatsbyImageData && (
+          <ProductImage
+            src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
+            alt={product.title}
+          />
+        )}
+        <ProductTitle>{product.title}</ProductTitle>
+        <ProductDesc>{product.description}</ProductDesc>
+      </CardContent>
+    </Card>
+  </Link>
+);
+
 const Products = () => {
   const data = useStaticQuery(graphql`
     query ProductListQuery {
       allProductData {
         nodes {
-          id
-          title
-          description
-          sector
-          slug
-          image {
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-            }
-          }
+          ...ProductFields
+        }
+      }
+    }
+
+    fragment ProductFields on ProductData {
+      id
+      title
+      description
+      sector
+      slug
+      image {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
@@ -77,11 +98,7 @@ const Products = () => {
 
   const products = data.allProductData.nodes;
 
-  const sectors = [
-    "Aquaculture",
-    "Agriculture",
-    "Environmental Remediation"
-  ];
+  const sectors = ["Aquaculture", "Agriculture", "Environmental Remediation"];
 
   return (
     <Wrapper>
@@ -93,20 +110,7 @@ const Products = () => {
             {products
               .filter((product) => product.sector === sector)
               .map((product) => (
-                <Link to={product.slug || "#"} key={product.id} style={{ textDecoration: "none" }}>
-                  <Card>
-                    <CardContent>
-                      {product.image?.childImageSharp?.gatsbyImageData && (
-                        <ProductImage
-                          src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
-                          alt={product.title}
-                        />
-                      )}
-                      <ProductTitle>{product.title}</ProductTitle>
-                      <ProductDesc>{product.description}</ProductDesc>
-                    </CardContent>
-                  </Card>
-                </Link>
+                <ProductCard key={product.id} product={product} />
               ))}
           </ProductGrid>
         </SectorSection>
