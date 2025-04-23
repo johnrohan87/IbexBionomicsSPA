@@ -23,25 +23,25 @@ const productList = [
               {
                 heading: "Boosts Plankton",
                 text: "Stimulates phyto- and zooplankton growth for improved nutrition.",
-                imageKey: '/IbexBionomics/Aquaculture/PondBloom.png',
+                image: '/IbexBionomics/Aquaculture/PondBloom.png',
                 imageStyle: "fadeTop"
               },
               {
                 heading: "Reduces Feed & Energy",
                 text: "Cuts feed and aeration energy costs by over 50%.",
-                imageKey: '/IbexBionomics/Aquaculture/WaterDropletSide.png',
+                image: '/IbexBionomics/Aquaculture/WaterDropletSide.png',
                 imageStyle: "fadeTop"
               },
               {
                 heading: "Controls Sludge",
                 text: "Degrades organic waste and prevents toxic gas formation.",
-                imageKey: '/IbexBionomics/Aquaculture/AlgaeBloom.png',
+                image: '/IbexBionomics/Aquaculture/AlgaeBloom.png',
                 imageStyle: "fadeTop"
               },
               {
                 heading: "Organic Certified",
                 text: "Meets global standards for organic aquaculture.",
-                imageKey: '/IbexBionomics/Aquaculture/LeafDroplet.png',
+                image: '/IbexBionomics/Aquaculture/LeafDroplet.png',
                 imageStyle: "fadeTop"
               }
             ]
