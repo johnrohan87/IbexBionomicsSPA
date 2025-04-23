@@ -14,6 +14,9 @@
   "workspaces": [
     "packages/landing-gatsby"
   ],
+  "resolutions": {
+    "source-map": "0.7.4"
+  },
   "scripts": {
     "clean": "yarn workspaces run rimraf \"{node_modules,.cache,out,dist}\" && rimraf node_modules",
     "gatsby-dev": "yarn workspace @superprops/gatsby run dev",

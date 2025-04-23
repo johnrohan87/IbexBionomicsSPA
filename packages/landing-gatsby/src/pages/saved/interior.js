@@ -37,14 +37,14 @@ const Interior = () => {
             </DrawerProvider>
           </Sticky>
           <ContentWrapper>
-            <Banner />
+            {/*<Banner />
             <Feature />
             <AboutUs />
             <Project />
             <Team />
             <News />
             <Testimonial />
-            <Gallery />
+            <Gallery />*/}
           </ContentWrapper>
           <Footer />
         </InteriorWrapper>

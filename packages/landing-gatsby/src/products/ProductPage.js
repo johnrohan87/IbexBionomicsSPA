@@ -3,13 +3,10 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
-// Dynamic layout blocks (extend as needed)
+
 import HorizontalToVerticalDynamicCards4 from "./containers/Blocks/HorizontalToVerticalDynamicCards4";
 import PictureWithContent from "./containers/Blocks/PictureWithContent";
 
-/* -------------------------------------------------- */
-/*  Styled Components                                 */
-/* -------------------------------------------------- */
 const Wrapper = styled.div`
   padding: 3rem 1.5rem;
   max-width: 800px;
@@ -102,15 +99,13 @@ const Badge = styled.span`
   font-weight: 600;
 `;
 
-/* Map of available layout blocks */
+
 const blocks = {
   HorizontalToVerticalDynamicCards4,
   PictureWithContent,
 };
 
-/* -------------------------------------------------- */
-/*  Component                                         */
-/* -------------------------------------------------- */
+
 const ProductPage = ({ data, pageContext }) => {
   const product = data.productData;
   const { layoutBlocks = [] } = pageContext;
@@ -168,9 +163,6 @@ const ProductPage = ({ data, pageContext }) => {
   );
 };
 
-/* -------------------------------------------------- */
-/*  Page Query + fragment                             */
-/* -------------------------------------------------- */
 export const query = graphql`
   query ProductPageQuery($id: String!) {
     productData(id: { eq: $id }) {

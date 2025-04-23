@@ -6,7 +6,12 @@
 
 // You can delete this file if you're not using it
 import React from "react";
+//import './src/polyfills/processBrowser'
 import { ParallaxProvider } from "react-scroll-parallax";
+
+if (typeof window !== 'undefined' && typeof window.process === 'undefined') {
+  window.process = { browser: true };
+}
 
 if (typeof window !== 'undefined' && 'ResizeObserver' in window) {
   // Patch ResizeObserver to suppress loop errors
