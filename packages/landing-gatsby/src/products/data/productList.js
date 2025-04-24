@@ -1,12 +1,30 @@
-import pondBloom   from '../../images/IbexBionomics/Aquaculture/PondBloom.png';
-import pondReflecting   from '../../images/IbexBionomics/Aquaculture/PondReflecting.png';
-import waterDrop   from '../../images/IbexBionomics/Aquaculture/WaterDropletSide.png';
-import waterSide   from '../../images/IbexBionomics/Aquaculture/WaterSide.png';
-import Shrimp from '../../images/IbexBionomics/Aquaculture/Shrimp.png'
-import algaeBloom  from '../../images/IbexBionomics/Aquaculture/AlgaeBloom.png';
-import leafDroplet from '../../images/IbexBionomics/Aquaculture/LeafDroplet.png';
+const isBrowser = typeof window !== 'undefined';
 
-export default [
+
+const pondBloom = isBrowser
+  ? require('../../images/IbexBionomics/Aquaculture/PondBloom.png')
+  : 'IbexBionomics/Aquaculture/PondBloom.png';
+const waterDrop = isBrowser
+  ? require('../../images/IbexBionomics/Aquaculture/WaterDropletSide.png')
+  : 'IbexBionomics/Aquaculture/WaterDropletSide.png';
+const algaeBloom = isBrowser
+  ? require('../../images/IbexBionomics/Aquaculture/AlgaeBloom.png')
+  : 'IbexBionomics/Aquaculture/AlgaeBloom.png';
+const leafDroplet = isBrowser
+  ? require('../../images/IbexBionomics/Aquaculture/LeafDroplet.png')
+  : 'IbexBionomics/Aquaculture/LeafDroplet.png';
+const waterSide = isBrowser
+  ? require('../../images/IbexBionomics/Aquaculture/WaterSide.png')
+  : 'IbexBionomics/Aquaculture/WaterSide.png';
+const pondReflecting = isBrowser
+  ? require('../../images/IbexBionomics/Aquaculture/PondReflecting.png')
+  : 'IbexBionomics/Aquaculture/PondReflecting.png';
+const shrimp = isBrowser
+  ? require('../../images/IbexBionomics/Aquaculture/Shrimp.png')
+  : 'IbexBionomics/Aquaculture/Shrimp.png';
+
+
+const productList = [
     {
         id: "hydrolife",
         productKey: "hydrolife",
@@ -31,25 +49,25 @@ export default [
                 {
                   heading: "Boosts Plankton",
                   text: "Stimulates phyto- and zooplankton growth for improved nutrition.",
-                  image: pondBloom,
+                  image: pondBloom || 'IbexBionomics/Aquaculture/PondBloom.png',
                   imageStyle: "fadeTop"
                 },
                 {
                   heading: "Reduces Feed & Energy",
                   text: "Cuts feed and aeration energy costs by over 50%.",
-                  image: waterDrop,
+                  image: waterDrop || 'IbexBionomics/Aquaculture/WaterDropletSide.png',
                   imageStyle: "fadeTop"
                 },
                 {
                   heading: "Controls Sludge",
                   text: "Degrades organic waste and prevents toxic gas formation.",
-                  image: algaeBloom,
+                  image: algaeBloom || 'IbexBionomics/Aquaculture/AlgaeBloom.png',
                   imageStyle: "fadeTop"
                 },
                 {
                   heading: "Organic Certified",
                   text: "Meets global standards for organic aquaculture.",
-                  image: leafDroplet,
+                  image: leafDroplet || 'IbexBionomics/Aquaculture/LeafDroplet.png',
                   imageStyle: "fadeTop"
                 }
               ]
@@ -60,7 +78,7 @@ export default [
             props: {
               title: "HYDROLIFE: Natural Nutritional Balance",
               text: "HYDROLIFE stimulates chlorophyll production, enhances nutrient absorption, and accelerates the growth of plankton that fish and crustaceans can consume directly—reducing commercial feed dependency and improving aquaculture sustainability.",
-              image: Shrimp,
+              image: shrimp || 'IbexBionomics/Aquaculture/Shrimp.png',
               bg: "#f9fafb",
               reverse: true,
               headingSize: "2.25rem",
@@ -86,7 +104,7 @@ export default [
             props: {
               title: "MINERVIX: Advanced Microbial Support",
               text: "MINERVIX enhances microbial ecosystems, reduces sludge, and restores clarity.",
-              image: pondReflecting,
+              image: pondReflecting || 'IbexBionomics/Aquaculture/PondReflecting.png',
               bg: "#f9fafb",
               reverse: false,
               headingSize: "2.25rem",
@@ -101,7 +119,7 @@ export default [
         title: "NU3ZER",
         description: "Photosynthesis booster and stress resilience enhancer",
         sector: "Agriculture",
-        imageFilename: "nu3zer.png",
+        imageFilename: "IbexBionomics/Aquaculture/PondBloom.png",
         grabber: "Boosts yield, stress resistance, and energy storage in crops.",
         modeOfAction: "Enhances photosynthesis and chemosynthesis, improves metabolite transport, promotes enzyme production.",
         modeOfUse: "Use as base with nutritional formulas or foliar spray; suitable for all agricultural systems.",
@@ -113,10 +131,11 @@ export default [
         title: "X-BLAST",
         description: "Fractures and digests fats/oils in wastewater remediation",
         sector: "Environmental Remediation",
-        imageFilename: "x-blast.png",
+        imageFilename: "IbexBionomics/Aquaculture/PondBloom.png",
         grabber: "Breaks down fats and oils, speeds up hydrocarbon degradation.",
         modeOfAction: "Micro-fractures organic molecules, accelerates biodegradation of hydrocarbons, reduces sludge.",
         modeOfUse: "Apply in treatment tanks or landfarming systems per contamination profile.",
         badges: ["Wastewater", "Fats & Oils", "Hydrocarbon Remediation"]
       }
 ];
+module.exports = productList;

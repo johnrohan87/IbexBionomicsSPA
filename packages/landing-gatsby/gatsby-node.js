@@ -4,7 +4,7 @@ const fs = require('fs');
 const EventEmitter = require('events');
 EventEmitter.defaultMaxListeners = 20;
 
-const productList = require('./src/products/data/productList.node');
+const productList = require('./src/products/data/productList');
 
 const webpack = require('webpack');
 

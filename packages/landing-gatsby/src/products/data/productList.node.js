@@ -46,6 +46,18 @@ const productList = [
               }
             ]
           }
+        },
+        {
+          type: "PictureWithContent",
+          props: {
+            title: "HYDROLIFE: Natural Nutritional Balance",
+            text: "HYDROLIFE stimulates chlorophyll production, enhances nutrient absorption, and accelerates the growth of plankton that fish and crustaceans can consume directly—reducing commercial feed dependency and improving aquaculture sustainability.",
+            image: "IbexBionomics/Aquaculture/Shrimp.png",
+            bg: "#f9fafb",
+            reverse: true,
+            headingSize: "2.25rem",
+            textSize: "1.05rem"
+          }
         }
       ]
     },
@@ -55,7 +67,7 @@ const productList = [
       title: "MINERVIX",
       description: "Mineral complex that reduces sludge and supports microbial health",
       sector: "Aquaculture",
-      imageFilename: "minervix.png",
+      imageFilename: "IbexBionomics/Aquaculture/PondReflecting.png",
       grabber: "Reduces sludge while enhancing microbial ecosystems.",
       modeOfAction: "Stimulates beneficial microbes, promotes sludge degradation, eliminates toxic gases from silts.",
       modeOfUse: "Apply regularly to aquaculture systems for long-term sludge control.",
@@ -64,11 +76,11 @@ const productList = [
         {
           type: "PictureWithContent",
           props: {
-            title: "MINERVIX: Advanced Microbial Support",
-            text: "MINERVIX enhances microbial ecosystems, reduces sludge, and restores clarity.",
-            icon: "/images/products/minervix.png",
-            bg: "#f9fafb",
-            reverse: false,
+            title: "HYDROLIFE: Natural Nutritional Balance",
+            text: "HYDROLIFE stimulates chlorophyll production, enhances nutrient absorption, and accelerates the growth of plankton that fish and crustaceans can consume directly—reducing commercial feed dependency and improving aquaculture sustainability.",
+            image: "/IbexBionomics/Aquaculture/PondReflecting.png",
+            bg: "#e6f7ec",
+            reverse: true,
             headingSize: "2.25rem",
             textSize: "1.05rem"
           }

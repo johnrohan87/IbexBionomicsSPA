@@ -1,4 +1,5 @@
 import React from 'react';
+import { withPrefix } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -62,8 +63,10 @@ const PictureWithContent = ({
   return (
     <Section bg={bg} reverse={reverse}>
       <ImageWrapper>
-        {imgData ? (
+      {imgData ? (
           <GatsbyImage image={imgData} alt={title} />
+        ) : typeof image === 'string' ? (
+          <img src={withPrefix('/' + image.replace(/^\/+/g, ''))} alt={title} />
         ) : icon ? (
           <img src={icon} alt={title} />
         ) : null}
@@ -77,7 +80,7 @@ const PictureWithContent = ({
 };
 
 PictureWithContent.propTypes = {
-  image: PropTypes.object,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   icon: PropTypes.string,
   title: PropTypes.string,
   text: PropTypes.string,
