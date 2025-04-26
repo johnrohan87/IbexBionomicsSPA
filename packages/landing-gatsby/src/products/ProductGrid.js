@@ -38,20 +38,18 @@ export const SectorTitle = styled.h2`
 
 export const ProductGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards in desktop */
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   justify-content: center;
 
   @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr); /* 3 cards across large tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr); /* 2x2 cards on small tablet */
-  }
-
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr; /* 1 card per line on phone */
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
   }
 `;
 
@@ -59,24 +57,19 @@ export const Card = styled.div`
   background: white;
   border-radius: 1rem;
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  max-width: 320px;
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   }
 
   @media (max-width: 768px) {
     padding: 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 1rem;
   }
 `;
 
