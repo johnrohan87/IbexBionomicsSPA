@@ -38,12 +38,20 @@ export const SectorTitle = styled.h2`
 
 export const ProductGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* 4 cards in desktop */
   gap: 1.5rem;
+  justify-content: center;
 
-  /* Center if only 1 card */
-  & > div:only-child {
-    justify-self: center;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards across large tablet */
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 cards on small tablet */
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr; /* 1 card per line on phone */
   }
 `;
 
