@@ -24,7 +24,18 @@ const Hero = styled.div`
 const HeroImage = styled.img`
   width: 100%;
   height: auto;
-  display: block;
+  aspect-ratio: 16 / 7; /* Standard widescreen proportion */
+  object-fit: cover;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+  @media (max-width: 1024px) {
+    aspect-ratio: 16 / 9;
+  }
+
+  @media (max-width: 768px) {
+    aspect-ratio: 16 / 10;
+  }
 `;
 
 const OverlayWrap = styled.div`
@@ -41,7 +52,14 @@ const Overlay = styled.div`
   border-radius: 0.75rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
-  max-width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
 
   @keyframes fadeInUp {
     from {
@@ -57,16 +75,24 @@ const Overlay = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #14532d;
-  margin: 0.5rem 0;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const Subtitle = styled.p`
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #374151;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const SectionTitle = styled.h2`

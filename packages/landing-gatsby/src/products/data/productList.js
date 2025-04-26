@@ -11,11 +11,11 @@ const pondReflecting = isBrowser
   ? require('../../images/IbexBionomics/Aquaculture/PondReflecting.png')
   : 'IbexBionomics/Aquaculture/PondReflecting.png';
 const plantSprout = isBrowser
-  ? require('../../images/IbexBionomics/Aquaculture/PlantSprout.png')
-  : 'IbexBionomics/Aquaculture/PlantSprout.png';
+  ? require('../../images/IbexBionomics/Aquaculture/PlantSprout.jpg')
+  : 'IbexBionomics/Aquaculture/PlantSprout.jpg';
 const plantSeedling = isBrowser
-  ? require('../../images/IbexBionomics/Aquaculture/PlantSeedling.png')
-  : 'IbexBionomics/Aquaculture/PlantSeedling.png'; 
+  ? require('../../images/IbexBionomics/Aquaculture/PlantSeedling.jpg')
+  : 'IbexBionomics/Aquaculture/PlantSeedling.jpg'; 
 const waterSide = isBrowser
   ? require('../../images/IbexBionomics/Aquaculture/WaterSide.png')
   : 'IbexBionomics/Aquaculture/WaterSide.png';
