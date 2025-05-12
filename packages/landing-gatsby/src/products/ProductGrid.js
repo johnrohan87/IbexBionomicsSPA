@@ -40,13 +40,14 @@ export const ProductGrid = styled.div`
   display: grid;
   grid-template-columns: ${({ columns }) => `repeat(${columns}, 1fr)`};
   gap: 2rem;
-  justify-content: center;
-  place-items: center;
+  justify-items: center;
 
-  @media (max-width: 1200px) {
-    grid-template-columns: ${({ columns }) =>
-      columns > 2 ? 'repeat(2, 1fr)' : `repeat(${columns}, 1fr)`};
-  }
+  ${({ isSingle }) =>
+    isSingle &&
+    `
+    max-width: 420px;
+    margin: 0 auto;
+  `}
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -70,13 +71,12 @@ export const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 1.5rem;
+  padding: 1.25rem;
   }
 `;
 
 export const ProductImage = styled.img`
   width: 100%;
-  max-width: 300px;
   height: 200px;
   object-fit: cover;
   border-radius: 0.75rem;

@@ -41,12 +41,13 @@ const Products = () => {
       <Title>IBEX Bionomics Product Solutions</Title>
       {sectors.map((sector) => {
         const sectorProducts = products.filter(product => product.sector === sector);
-        const columns = Math.min(sectorProducts.length, 4); // max 4 columns
+        const columns = Math.min(sectorProducts.length, 4);
+        const isSingle = sectorProducts.length === 1;
 
         return (
           <SectorSection key={sector}>
             <SectorTitle>{sector}</SectorTitle>
-            <ProductGrid columns={columns}>
+            <ProductGrid columns={columns} isSingle={isSingle}>
               {sectorProducts.map((product) => (
                 <StyledLink to={product.slug || "#"} key={product.id}>
                   <Card>
