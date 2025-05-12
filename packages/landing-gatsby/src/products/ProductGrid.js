@@ -38,12 +38,14 @@ export const SectorTitle = styled.h2`
 
 export const ProductGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: ${({ columns }) => `repeat(${columns}, 1fr)`};
   gap: 2rem;
   justify-content: center;
+  place-items: center;
 
   @media (max-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: ${({ columns }) =>
+      columns > 2 ? 'repeat(2, 1fr)' : `repeat(${columns}, 1fr)`};
   }
 
   @media (max-width: 768px) {
@@ -58,7 +60,6 @@ export const Card = styled.div`
   border-radius: 1rem;
   padding: 2rem;
   width: 100%;
-  max-width: 320px;
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;

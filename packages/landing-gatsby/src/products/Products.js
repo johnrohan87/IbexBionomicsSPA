@@ -39,50 +39,32 @@ const Products = () => {
   return (
     <Wrapper>
       <Title>IBEX Bionomics Product Solutions</Title>
-      {sectors.map((sector) => (
-        <SectorSection key={sector}>
-          <SectorTitle>{sector}</SectorTitle>
-          <ProductGrid>
-            {products.filter((product) => product.sector === sector).length === 1 ? (
-              <div style={{ maxWidth: '400px', margin: '0 auto' }}>
-                {products
-                  .filter((product) => product.sector === sector)
-                  .map((product) => (
-                    <StyledLink to={product.slug || "#"} key={product.id}>
-                      <Card>
-                        {product.image?.childImageSharp?.gatsbyImageData && (
-                          <ProductImage
-                            src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
-                            alt={product.title}
-                          />
-                        )}
-                        <ProductTitle>{product.title}</ProductTitle>
-                        <ProductDesc>{product.description}</ProductDesc>
-                      </Card>
-                    </StyledLink>
-                  ))}
-              </div>
-            ) : (
-              products
-                .filter((product) => product.sector === sector)
-                .map((product) => (
-                  <StyledLink to={product.slug || "#"} key={product.id}>
-                    <Card>
-                      {product.image?.childImageSharp?.gatsbyImageData && (
-                        <ProductImage
-                          src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
-                          alt={product.title}
-                        />
-                      )}
-                      <ProductTitle>{product.title}</ProductTitle>
-                      <ProductDesc>{product.description}</ProductDesc>
-                    </Card>
-                  </StyledLink>
-                ))
-            )}
-          </ProductGrid>
-        </SectorSection>
-      ))}
+      {sectors.map((sector) => {
+        const sectorProducts = products.filter(product => product.sector === sector);
+        const columns = Math.min(sectorProducts.length, 4); // max 4 columns
+
+        return (
+          <SectorSection key={sector}>
+            <SectorTitle>{sector}</SectorTitle>
+            <ProductGrid columns={columns}>
+              {sectorProducts.map((product) => (
+                <StyledLink to={product.slug || "#"} key={product.id}>
+                  <Card>
+                    {product.image?.childImageSharp?.gatsbyImageData && (
+                      <ProductImage
+                        src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
+                        alt={product.title}
+                      />
+                    )}
+                    <ProductTitle>{product.title}</ProductTitle>
+                    <ProductDesc>{product.description}</ProductDesc>
+                  </Card>
+                </StyledLink>
+              ))}
+            </ProductGrid>
+          </SectorSection>
+        );
+      })}
     </Wrapper>
   );
 };
