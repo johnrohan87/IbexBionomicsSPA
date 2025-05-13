@@ -53,7 +53,6 @@ export const ProductGrid = styled.div`
   grid-template-columns: ${({ columns }) => `repeat(${columns}, 1fr)`};
   gap: 2rem;
   justify-items: center;
-  width: 100%;
 
   ${({ isSingle }) =>
     isSingle &&
@@ -64,22 +63,27 @@ export const ProductGrid = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    padding: 0 1rem;
+    padding: 0 0.75rem;
     margin: 0 auto;
+    width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
   }
 `;
 
-export const Card = styled.div`
+export const GridCard = styled.div`
   background: white;
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
   width: 100%;
   max-width: 420px;
   box-sizing: border-box;
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
   &:hover {
     transform: translateY(-6px);
@@ -87,10 +91,13 @@ export const Card = styled.div`
   }
 
   @media (max-width: 768px) {
+    min-height: 420px;
+    justify-content: space-between;
     padding: 1rem;
     margin: 0 auto;
   }
 `;
+GridCard.displayName = 'GridCard';
 
 export const ProductImage = styled.img`
   width: 100%;
@@ -134,6 +141,10 @@ export const ProductDesc = styled.p`
 
   @media (max-width: 768px) {
     font-size: 0.875rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 `;
 

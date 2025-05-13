@@ -6,7 +6,7 @@ import {
   SectorSection,
   SectorTitle,
   ProductGrid,
-  Card,
+  GridCard,
   ProductImage,
   ProductTitle,
   ProductDesc,
@@ -50,7 +50,7 @@ const Products = () => {
             <ProductGrid columns={columns} isSingle={isSingle}>
               {sectorProducts.map((product) => (
                 <StyledLink to={product.slug || "#"} key={product.id}>
-                  <Card>
+                  <GridCard>
                     {product.image?.childImageSharp?.gatsbyImageData && (
                       <ProductImage
                         src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
@@ -59,7 +59,7 @@ const Products = () => {
                     )}
                     <ProductTitle>{product.title}</ProductTitle>
                     <ProductDesc>{product.description}</ProductDesc>
-                  </Card>
+                  </GridCard>
                 </StyledLink>
               ))}
             </ProductGrid>
