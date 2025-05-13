@@ -1,14 +1,22 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 
+// Apply box-sizing to all elements (ideal if you add this globally elsewhere too)
+const GlobalStyleFix = styled.div`
+  * {
+    box-sizing: border-box;
+  }
+`;
+
 export const Wrapper = styled.div`
   padding: 3rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
 
   @media (max-width: 768px) {
     padding: 2rem 0.75rem;
   }
+
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 export const Title = styled.h1`
@@ -45,6 +53,7 @@ export const ProductGrid = styled.div`
   grid-template-columns: ${({ columns }) => `repeat(${columns}, 1fr)`};
   gap: 2rem;
   justify-items: center;
+  width: 100%;
 
   ${({ isSingle }) =>
     isSingle &&
@@ -55,7 +64,8 @@ export const ProductGrid = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
+    margin: 0 auto;
     max-width: 100%;
   }
 `;
@@ -63,9 +73,10 @@ export const ProductGrid = styled.div`
 export const Card = styled.div`
   background: white;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1.5rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
+  box-sizing: border-box;
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -76,7 +87,8 @@ export const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 1.25rem;
+    padding: 1rem;
+    margin: 0 auto;
   }
 `;
 
