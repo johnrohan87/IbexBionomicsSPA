@@ -22,19 +22,12 @@ const SectionHeading = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-
-  justify-items: center;
-  align-items: start;
 `;
 
 const Card = styled.div`
@@ -43,12 +36,12 @@ const Card = styled.div`
   background: white;
   border-radius: 1rem;
   padding: 2rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 
   &:hover {
     transform: translateY(-8px);
@@ -59,7 +52,6 @@ const Card = styled.div`
     margin-bottom: 1rem;
     max-width: var(--imgSize);
     width: 100%;
-
     img {
       width: 100%;
       height: auto;
@@ -86,7 +78,7 @@ const Card = styled.div`
   }
 
   h4 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: bold;
     color: #15803d;
     margin-bottom: 0.75rem;
@@ -97,20 +89,13 @@ const Card = styled.div`
     color: #374151;
     line-height: 1.6;
   }
-
-  .card-caption {
-    font-size: 0.85rem;
-    color: #6b7280;
-    margin-top: 0.5rem;
-  }
 `;
 
-const HorizontalToVerticalDynamicCards4 = ({ title, items, bg, imgSize = '60px' }) => (
+const HorizontalToVerticalDynamicCards4 = ({ title, items, bg, imgSize = '80px' }) => (
   <Section bg={bg}>
     <SectionHeading>
       <h2>{title}</h2>
     </SectionHeading>
-
     <Grid>
       {items.map((item, idx) => {
         const hasBlur = item.imageStyle === 'fadeTop';
@@ -118,7 +103,7 @@ const HorizontalToVerticalDynamicCards4 = ({ title, items, bg, imgSize = '60px' 
         const gatsbyImage = getImage(item.image);
         const imgProps = hasBlur ? { className: 'blur-img' } : {};
 
-        const CardContent = (
+        return (
           <Card key={idx} imgSize={imgSize}>
             <div className={wrapperClass}>
               {gatsbyImage ? (
@@ -135,16 +120,7 @@ const HorizontalToVerticalDynamicCards4 = ({ title, items, bg, imgSize = '60px' 
             </div>
             <h4>{item.heading}</h4>
             <p>{item.text}</p>
-            {item.caption && <p className="card-caption">{item.caption}</p>}
           </Card>
-        );
-
-        return item.link ? (
-          <a key={idx} href={item.link} style={{ textDecoration: 'none', color: 'inherit' }}>
-            {CardContent}
-          </a>
-        ) : (
-          <div key={idx}>{CardContent}</div>
         );
       })}
     </Grid>
@@ -159,9 +135,7 @@ HorizontalToVerticalDynamicCards4.propTypes = {
     PropTypes.shape({
       heading: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
-      caption: PropTypes.string,
       icon: PropTypes.string,
-      link: PropTypes.string,
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       imageStyle: PropTypes.string,
     })

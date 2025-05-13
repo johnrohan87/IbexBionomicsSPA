@@ -57,11 +57,12 @@ export const ProductGrid = styled.div`
   ${({ isSingle }) =>
     isSingle &&
     `
-    max-width: 420px;
+    max-width: 600px;
     margin: 0 auto;
+    width: 100%;
   `}
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (orientation: portrait) {
     grid-template-columns: 1fr;
     padding: 0 0.75rem;
     margin: 0 auto;
@@ -69,14 +70,21 @@ export const ProductGrid = styled.div`
     max-width: 100%;
     box-sizing: border-box;
   }
+
+  @media (orientation: landscape) and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 1rem;
+    justify-content: center;
+  }
 `;
 
 export const GridCard = styled.div`
   background: white;
   border-radius: 1rem;
-  padding: 1.25rem;
+  padding: 2rem;
   width: 100%;
-  max-width: 440px;
+  max-width: 100%;
   box-sizing: border-box;
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -92,15 +100,13 @@ export const GridCard = styled.div`
 
   @media (max-width: 768px) {
     min-height: 420px;
-    justify-content: space-between;
-    padding: 1rem;
     margin: 0 auto;
   }
 
   @media (orientation: landscape) and (max-width: 1024px) {
-    margin: 0 auto;
-    width: 100%;
+    min-height: auto;
     max-width: 420px;
+    margin: 0 auto;
   }
 `;
 GridCard.displayName = 'GridCard';
