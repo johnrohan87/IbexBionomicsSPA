@@ -76,7 +76,7 @@ export const GridCard = styled.div`
   border-radius: 1rem;
   padding: 1.25rem;
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
   box-sizing: border-box;
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -95,6 +95,12 @@ export const GridCard = styled.div`
     justify-content: space-between;
     padding: 1rem;
     margin: 0 auto;
+  }
+
+  @media (orientation: landscape) and (max-width: 1024px) {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 420px;
   }
 `;
 GridCard.displayName = 'GridCard';
@@ -116,17 +122,18 @@ export const ProductImage = styled.img`
 `;
 
 export const ProductTitle = styled.h3`
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #166534;
-  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #14532d;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02rem;
 
   @media (max-width: 1024px) {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   @media (max-width: 768px) {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
   }
 `;
 
