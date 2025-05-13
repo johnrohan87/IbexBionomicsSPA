@@ -2,9 +2,13 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 
 export const Wrapper = styled.div`
-  padding: 3rem 1.5rem;
+  padding: 3rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 2rem 0.75rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -51,8 +55,8 @@ export const ProductGrid = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 0 auto;
+    padding: 0 0.5rem;
+    max-width: 100%;
   }
 `;
 
@@ -61,6 +65,7 @@ export const Card = styled.div`
   border-radius: 1rem;
   padding: 2rem;
   width: 100%;
+  max-width: 400px;
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -71,7 +76,7 @@ export const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-  padding: 1.25rem;
+    padding: 1.25rem;
   }
 `;
 
