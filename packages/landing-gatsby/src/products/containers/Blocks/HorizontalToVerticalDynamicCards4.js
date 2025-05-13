@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-
 const Section = styled.section`
   padding: 60px 20px;
   background-color: ${({ bg }) => bg || '#f0fdf4'};
@@ -13,6 +12,7 @@ const Section = styled.section`
 const SectionHeading = styled.div`
   text-align: center;
   margin-bottom: 3rem;
+
   h2 {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 700;
@@ -22,10 +22,20 @@ const SectionHeading = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-`;
 
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  justify-items: center;
+  align-items: start;
+`;
 
 const Card = styled.div`
   --imgSize: ${({ imgSize }) => imgSize || '60px'};
@@ -45,11 +55,11 @@ const Card = styled.div`
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
   }
 
-  /* plain icon / thumbnail */
   .card-media {
     margin-bottom: 1rem;
     max-width: var(--imgSize);
     width: 100%;
+
     img {
       width: 100%;
       height: auto;
@@ -57,7 +67,6 @@ const Card = styled.div`
     }
   }
 
-  /* fade‑top blur banner */
   .card-media-blur {
     position: relative;
     width: 100%;
@@ -88,8 +97,13 @@ const Card = styled.div`
     color: #374151;
     line-height: 1.6;
   }
-`;
 
+  .card-caption {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+  }
+`;
 
 const HorizontalToVerticalDynamicCards4 = ({ title, items, bg, imgSize = '60px' }) => (
   <Section bg={bg}>
@@ -98,39 +112,44 @@ const HorizontalToVerticalDynamicCards4 = ({ title, items, bg, imgSize = '60px' 
     </SectionHeading>
 
     <Grid>
-      {items.slice(0, 4).map((item, idx) => {
+      {items.map((item, idx) => {
         const hasBlur = item.imageStyle === 'fadeTop';
         const wrapperClass = hasBlur ? 'card-media-blur' : 'card-media';
-
         const gatsbyImage = getImage(item.image);
         const imgProps = hasBlur ? { className: 'blur-img' } : {};
 
-        return (
+        const CardContent = (
           <Card key={idx} imgSize={imgSize}>
             <div className={wrapperClass}>
-              {/* 1️⃣ Gatsby‑Image variant */}
               {gatsbyImage ? (
                 <GatsbyImage image={gatsbyImage} alt={item.heading} {...imgProps} />
-              ) : /* 2️⃣ static path fallback */ typeof item.image === 'string' ? (
+              ) : typeof item.image === 'string' ? (
                 <img
                   src={withPrefix('/' + item.image.replace(/^\/+/g, ''))}
                   alt={item.heading}
                   {...imgProps}
                 />
-              ) : /* 3️⃣ simple icon path */ item.icon ? (
+              ) : item.icon ? (
                 <img src={item.icon} alt={item.heading} />
               ) : null}
             </div>
-
             <h4>{item.heading}</h4>
             <p>{item.text}</p>
+            {item.caption && <p className="card-caption">{item.caption}</p>}
           </Card>
+        );
+
+        return item.link ? (
+          <a key={idx} href={item.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+            {CardContent}
+          </a>
+        ) : (
+          <div key={idx}>{CardContent}</div>
         );
       })}
     </Grid>
   </Section>
 );
-
 
 HorizontalToVerticalDynamicCards4.propTypes = {
   title: PropTypes.string.isRequired,
@@ -140,7 +159,9 @@ HorizontalToVerticalDynamicCards4.propTypes = {
     PropTypes.shape({
       heading: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
+      caption: PropTypes.string,
       icon: PropTypes.string,
+      link: PropTypes.string,
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       imageStyle: PropTypes.string,
     })
