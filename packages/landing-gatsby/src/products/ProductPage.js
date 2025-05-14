@@ -1,15 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
+import { withPrefix } from "gatsby";
 import Fade from "react-reveal/Fade";
-
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import HorizontalToVerticalDynamicCards4 from "./containers/Blocks/HorizontalToVerticalDynamicCards4";
 import PictureWithContent from "./containers/Blocks/PictureWithContent";
 
+// Styled Components
 const Wrapper = styled.div`
   padding: 3rem 1.5rem;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 `;
 
@@ -21,13 +23,11 @@ const Hero = styled.div`
   margin-bottom: 2rem;
 `;
 
-const HeroImage = styled.img`
+const HeroImage = styled(GatsbyImage)`
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 7; /* Standard widescreen proportion */
+  aspect-ratio: 16 / 7;
   object-fit: cover;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
 
   @media (max-width: 1024px) {
     aspect-ratio: 16 / 9;
@@ -55,11 +55,7 @@ const Overlay = styled.div`
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
-
-  @media (max-width: 768px) {
-    padding: 1.5rem;
-    max-width: 90%;
-  }
+  animation: fadeInUp 0.9s ease-in-out;
 
   @keyframes fadeInUp {
     from {
@@ -71,7 +67,11 @@ const Overlay = styled.div`
       transform: translateY(0);
     }
   }
-  animation: fadeInUp 0.9s ease-in-out;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
 `;
 
 const Title = styled.h1`
@@ -125,27 +125,22 @@ const Badge = styled.span`
   font-weight: 600;
 `;
 
-
+// Block Types
 const blocks = {
   HorizontalToVerticalDynamicCards4,
   PictureWithContent,
 };
 
-
 const ProductPage = ({ data, pageContext }) => {
   const product = data.productData;
   const { layoutBlocks = [] } = pageContext;
+  const heroImage = getImage(product.image);
 
   return (
     <>
       {/* Hero section */}
       <Hero>
-        {product.image?.childImageSharp?.gatsbyImageData && (
-          <HeroImage
-            src={product.image.childImageSharp.gatsbyImageData.images.fallback.src}
-            alt={product.title}
-          />
-        )}
+        {heroImage && <HeroImage image={heroImage} alt={product.title} />}
         <OverlayWrap>
           <Fade bottom duration={800} delay={100} once>
             <Overlay>
@@ -156,7 +151,6 @@ const ProductPage = ({ data, pageContext }) => {
         </OverlayWrap>
       </Hero>
 
-      {/* Text Details */}
       <Wrapper>
         {product.modeOfAction && (
           <>
@@ -172,18 +166,17 @@ const ProductPage = ({ data, pageContext }) => {
         )}
         {product.badges?.length > 0 && (
           <BadgeGroup>
-            {product.badges.map((b, i) => (
-              <Badge key={i}>{b}</Badge>
+            {product.badges.map((badge, idx) => (
+              <Badge key={idx}>{badge}</Badge>
             ))}
           </BadgeGroup>
         )}
       </Wrapper>
 
-      {/* Dynamic layout blocks */}
+      {/* Dynamic Layout Blocks */}
       {layoutBlocks.map((block, idx) => {
         const BlockComp = blocks[block.type];
-        if (!BlockComp) return null;
-        return <BlockComp key={idx} {...block.props} />;
+        return BlockComp ? <BlockComp key={idx} {...block.props} /> : null;
       })}
     </>
   );
@@ -192,22 +185,18 @@ const ProductPage = ({ data, pageContext }) => {
 export const query = graphql`
   query ProductPageQuery($id: String!) {
     productData(id: { eq: $id }) {
-      ...ProductPageFields
-    }
-  }
-
-  fragment ProductPageFields on ProductData {
-    id
-    productKey
-    title
-    description
-    grabber
-    modeOfAction
-    modeOfUse
-    badges
-    image {
-      childImageSharp {
-        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+      id
+      productKey
+      title
+      description
+      grabber
+      modeOfAction
+      modeOfUse
+      badges
+      image {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        }
       }
     }
   }
