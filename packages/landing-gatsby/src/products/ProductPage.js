@@ -13,9 +13,12 @@ const Wrapper = styled.div`
   padding: 3rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 `;
 
 const Hero = styled.div`
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 100%;
   border-radius: 1rem;
@@ -35,63 +38,68 @@ const HeroImage = styled(GatsbyImage)`
 
   @media (max-width: 768px) {
     aspect-ratio: 16 / 10;
+    max-height: 280px;
   }
 `;
 
 const OverlayWrap = styled.div`
   position: absolute;
-  bottom: 40%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
 `;
 
 const Overlay = styled.div`
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(6px);
-  max-width: 700px;
-  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 600px;
   text-align: center;
-  animation: fadeInUp 0.9s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 768px) {
-    padding: 1.5rem;
-    max-width: 90%;
+  @media (max-width: 480px) {
+    padding: 0 1rem 1rem 1rem;
   }
 `;
 
 const Title = styled.h1`
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 800;
   color: #14532d;
+  background: white;
+  padding: 0.25rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  margin-top: -1.5rem;
   margin-bottom: 0.5rem;
+  text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-top: -1.25rem;
+    padding: 0.2rem 0.75rem;
   }
 `;
 
 const Subtitle = styled.p`
   font-size: 1.25rem;
   color: #374151;
-  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
   }
 `;
 
