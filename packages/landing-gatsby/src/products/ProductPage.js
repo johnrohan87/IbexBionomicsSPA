@@ -110,6 +110,10 @@ const Subtitle = styled.p`
   margin-top: 1rem;
   margin-bottom: 0;
   text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
 
   @media (max-width: 768px) {
     font-size: 0.85rem;
