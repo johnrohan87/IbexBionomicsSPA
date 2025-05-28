@@ -75,13 +75,13 @@ const Overlay = styled.div`
 
   @media (max-width: 480px) {
     width: calc(100% - 2rem);
-    padding: 1rem;
+    padding: 1.5rem 1rem 1rem;
     max-width: 95%;
   }
   
   @media (max-width: 768px) {
     width: calc(100% - 2rem);
-    padding: 1rem;
+    padding: 1.5rem 1rem 1rem;
   }
 `;
 
@@ -105,19 +105,20 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: #374151;
-  margin-top: 1rem;
-  margin-bottom: 0;
+  margin: 0.75rem 0 0;
   text-align: center;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
   max-width: 100%;
+  line-height: 1.6;
 
   @media (max-width: 768px) {
-    font-size: 0.85rem;
-    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    line-height: 1.5;
   }
 `;
 
