@@ -76,6 +76,7 @@ const Overlay = styled.div`
   @media (max-width: 480px) {
     width: calc(100% - 2rem);
     padding: 1rem;
+    max-width: 95%;
   }
   
   @media (max-width: 768px) {
@@ -163,12 +164,14 @@ const ProductPage = ({ data, pageContext }) => {
       <Hero>
         {heroImage && <HeroImage image={heroImage} alt={product.title} />}
         <OverlayWrap>
-          <Fade bottom duration={800} delay={100} once>
-            <Overlay>
-              <Title>{product.title}</Title>
-              <Subtitle>{product.grabber || product.description}</Subtitle>
-            </Overlay>
-          </Fade>
+          <Overlay>
+            <Fade bottom duration={800} delay={100} cascade>
+              <>
+                <Title>{product.title}</Title>
+                <Subtitle>{product.grabber || product.description}</Subtitle>
+              </>
+            </Fade>
+          </Overlay>
         </OverlayWrap>
       </Hero>
 
