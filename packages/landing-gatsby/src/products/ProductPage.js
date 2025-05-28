@@ -57,6 +57,7 @@ const OverlayWrap = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
+  box-sizing: border-box;
 `;
 
 const Overlay = styled.div`
@@ -65,7 +66,7 @@ const Overlay = styled.div`
   border-radius: 0.75rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   width: 90%;
-  max-width: 600px;
+  max-width: 500px;
   text-align: center;
   display: flex;
   flex-direction: column;
