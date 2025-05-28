@@ -14,6 +14,11 @@ const Wrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const Hero = styled.div`
